@@ -15,13 +15,58 @@
         "טעינה מהירה וכוח עקבי מסוללות ליתיום",
         "אביזרי גולף ייעודיים"
       ],
+      "specs": {
+        "maxSpeed": "31 קמ\"ש",
+        "range": "65 ק\"מ",
+        "weight": "295 ק\"ג",
+        "length": "239 ס\"מ",
+        "width": "119 ס\"מ",
+        "height": "178 ס\"מ",
+        "groundClearance": "10 ס\"מ",
+        "cargoCapacity": "135 ק\"ג",
+        "battery": "סוללת ליתיום Samsung SDI 48V",
+        "chargeTime": "4-5 שעות (מ-0% ל-100%)",
+        "motor": "מנוע AC בעל יעילות גבוהה"
+      },
+      "colors": [
+        { "name": "שחור", "hex": "#1a1a1a" },
+        { "name": "לבן בהיר", "hex": "#f5f5f5" },
+        { "name": "פלטינום", "hex": "#a8a8a8" },
+        { "name": "כחול פטריוט", "hex": "#1e3a5f" },
+        { "name": "ירוק מט", "hex": "#4a5d4a" },
+        { "name": "אדום אינפרנו", "hex": "#8b2500" }
+      ],
+      "useCases": [
+        { "icon": "golf", "title": "מגרשי גולף", "description": "הרכב האידיאלי למגרשי גולף - קומפקטי, שקט וחזק" },
+        { "icon": "community", "title": "קהילות מגורים", "description": "מושלם לנסיעה בשכונות ובקהילות סגורות" },
+        { "icon": "resort", "title": "אתרי נופש", "description": "פתרון הסעה אמין למלונות ואתרי נופש" }
+      ],
+      "technologies": [
+        {
+          "name": "IntelliBrake",
+          "icon": "brake",
+          "description": "מערכת בלימה אוטומטית שמפעילה את בלם החניה ברגע שהרגל עוזבת את דוושת הגז - לבטיחות מרבית"
+        },
+        {
+          "name": "ELiTE Lithium",
+          "icon": "battery",
+          "description": "סוללות ליתיום מבית Samsung SDI - ללא תחזוקה, טעינה מהירה, וביצועים עקביים לאורך כל הנסיעה"
+        },
+        {
+          "name": "AC Drive",
+          "icon": "motor",
+          "description": "מנוע AC חסכוני ושקט במיוחד עם בלימה רגנרטיבית לטווח נסיעה ארוך יותר"
+        }
+      ],
+      "videoId": "ezgo_rxv",
       "images": [
         "https://ezgo.txtsv.com/sites/default/files/2024-11/Valor2_Cruiser_Platinum_v31_960x720.png",
         "https://ezgo.txtsv.com/sites/default/files/2025-05/_0001_Textron_EZGO_MY25_Spring-9757.jpg",
         "https://ezgo.txtsv.com/sites/default/files/2025-05/Valor2_Connect_Black_v31_960x720_0.png",
         "https://ezgo.txtsv.com/sites/default/files/2025-05/EZGO_CON_2025_RXV2_CC_0175_840x472.jpg"
       ],
-      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2025-05/EZGO_GOF_2025_RXV2_CC_9767_706x706.jpg"
+      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2025-05/EZGO_GOF_2025_RXV2_CC_9767_706x706.jpg",
+      "lifestyleImage": "https://ezgo.txtsv.com/sites/default/files/2025-05/_0001_Textron_EZGO_MY25_Spring-9757.jpg"
     },
     {
       "slug": "rxv-4",
@@ -39,13 +84,57 @@
         "מסך מגע ECOXGEAR 10 אינץ' עם Bluetooth",
         "אפשרויות מושבי יוקרה"
       ],
+      "specs": {
+        "maxSpeed": "31 קמ\"ש",
+        "range": "55 ק\"מ",
+        "weight": "385 ק\"ג",
+        "length": "305 ס\"מ",
+        "width": "119 ס\"מ",
+        "height": "178 ס\"מ",
+        "groundClearance": "10 ס\"מ",
+        "cargoCapacity": "180 ק\"ג",
+        "battery": "סוללת ליתיום Samsung SDI 48V",
+        "chargeTime": "5-6 שעות",
+        "motor": "מנוע AC בעל יעילות גבוהה"
+      },
+      "colors": [
+        { "name": "שחור", "hex": "#1a1a1a" },
+        { "name": "לבן בהיר", "hex": "#f5f5f5" },
+        { "name": "ירוק מט", "hex": "#4a5d4a" },
+        { "name": "אפור אושן", "hex": "#6b7b8c" },
+        { "name": "פלטינום", "hex": "#a8a8a8" }
+      ],
+      "useCases": [
+        { "icon": "golf", "title": "מגרשי גולף", "description": "להסעת שחקנים עם ציוד מלא" },
+        { "icon": "community", "title": "קהילות מגורים", "description": "מושלם למשפחות ונסיעות קצרות" },
+        { "icon": "kibbutz", "title": "קיבוצים ומושבים", "description": "פתרון הסעה יומיומי אמין" }
+      ],
+      "technologies": [
+        {
+          "name": "IntelliBrake",
+          "icon": "brake",
+          "description": "מערכת בלימה אוטומטית לבטיחות מרבית"
+        },
+        {
+          "name": "ELiTE Lithium",
+          "icon": "battery",
+          "description": "סוללות ליתיום ללא תחזוקה עם טעינה מהירה"
+        },
+        {
+          "name": "LED Lighting",
+          "icon": "light",
+          "description": "תאורת LED קדמית ואחורית לנראות מרבית"
+        }
+      ],
+      "videoId": null,
       "images": [
         "https://ezgo.txtsv.com/sites/default/files/2025-07/RXV4_SummitXTL_MatteGreen_v34_960x720.png",
         "https://ezgo.txtsv.com/sites/default/files/2025-05/_0003_EZGO_CON_2025_RXV4_CC_3776.jpg",
         "https://ezgo.txtsv.com/sites/default/files/2025-05/EZGO_CON_2025_RXV4_CC_2082_840x472.jpg",
         "https://ezgo.txtsv.com/sites/default/files/2025-05/EZGO_CON_2025_RXV4_CC_3895_840x472.jpg"
       ],
-      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2025-05/EZGO_CON_2025_RXV4_CC_3781_706x706.jpg"
+      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2025-05/EZGO_CON_2025_RXV4_CC_3781_706x706.jpg",
+      "lifestyleImage": "https://ezgo.txtsv.com/sites/default/files/2025-05/EZGO_CON_2025_RXV4_CC_2082_840x472.jpg"
     },
     {
       "slug": "liberty",
@@ -64,13 +153,57 @@
         "סוללות ליתיום ללא תחזוקה",
         "טכנולוגיית טעינה מהירה"
       ],
+      "specs": {
+        "maxSpeed": "40 קמ\"ש",
+        "range": "80 ק\"מ",
+        "weight": "450 ק\"ג",
+        "length": "340 ס\"מ",
+        "width": "127 ס\"מ",
+        "height": "185 ס\"מ",
+        "groundClearance": "12 ס\"מ",
+        "cargoCapacity": "200 ק\"ג",
+        "battery": "סוללת ליתיום Samsung SDI 48V מוגברת",
+        "chargeTime": "5-6 שעות",
+        "motor": "מנוע AC גבוה-ביצועים"
+      },
+      "colors": [
+        { "name": "כחול פטריוט", "hex": "#1e3a5f" },
+        { "name": "שחור", "hex": "#1a1a1a" },
+        { "name": "לבן בהיר", "hex": "#f5f5f5" },
+        { "name": "סלייט", "hex": "#5a6a7a" },
+        { "name": "פלטינום", "hex": "#a8a8a8" }
+      ],
+      "useCases": [
+        { "icon": "street", "title": "נסיעה ברחוב", "description": "מאושר לנסיעה בכבישים עירוניים עד 56 קמ\"ש" },
+        { "icon": "community", "title": "קהילות סגורות", "description": "אידיאלי לקהילות גמלאים ושכונות פרטיות" },
+        { "icon": "resort", "title": "בתי מלון", "description": "הסעת אורחים בסטייל" }
+      ],
+      "technologies": [
+        {
+          "name": "LSV Certified",
+          "icon": "road",
+          "description": "מאושר לנסיעה בכבישים ציבוריים - כולל חגורות בטיחות, מראות, ותאורה מלאה"
+        },
+        {
+          "name": "ELiTE Lithium",
+          "icon": "battery",
+          "description": "סוללת ליתיום מוגברת לטווח נסיעה ארוך במיוחד"
+        },
+        {
+          "name": "Premium Ride",
+          "icon": "comfort",
+          "description": "מערכת מתלים משופרת לנוחות נסיעה מרבית גם בכבישים"
+        }
+      ],
+      "videoId": null,
       "images": [
         "https://ezgo.txtsv.com/sites/default/files/2025-11/Liberty_SummitXTL_PatriotBlue_v13_960x720.png",
         "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_LibertyLSV_CC_8762%20%281%29.jpg",
         "https://ezgo.txtsv.com/sites/default/files/2026-01/Liberty_SummitX_Slate_v13_960x720.png",
         "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_LibertyLSV_CC_8499.jpg"
       ],
-      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_LibertyLSV_CC_9747.jpg"
+      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_LibertyLSV_CC_9747.jpg",
+      "lifestyleImage": "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_LibertyLSV_CC_3604.jpg"
     },
     {
       "slug": "express-4-elite",
@@ -88,13 +221,56 @@
         "אפשרויות מושבים פרימיום",
         "מסך מגע ECOXGEAR וסאונד בר"
       ],
+      "specs": {
+        "maxSpeed": "31 קמ\"ש",
+        "range": "60 ק\"מ",
+        "weight": "395 ק\"ג",
+        "length": "310 ס\"מ",
+        "width": "122 ס\"מ",
+        "height": "180 ס\"מ",
+        "groundClearance": "11 ס\"מ",
+        "cargoCapacity": "190 ק\"ג",
+        "battery": "סוללת ליתיום Samsung SDI 48V",
+        "chargeTime": "5-6 שעות",
+        "motor": "מנוע AC חסכוני"
+      },
+      "colors": [
+        { "name": "שחור", "hex": "#1a1a1a" },
+        { "name": "לבן בהיר", "hex": "#f5f5f5" },
+        { "name": "פלטינום", "hex": "#a8a8a8" },
+        { "name": "אפור מטאלי", "hex": "#5c5c5c" }
+      ],
+      "useCases": [
+        { "icon": "golf", "title": "מגרשי גולף", "description": "להסעת קבוצות שחקנים" },
+        { "icon": "community", "title": "קהילות גמלאים", "description": "נסיעה נוחה ובטוחה" },
+        { "icon": "kibbutz", "title": "קיבוצים", "description": "הסעה יומיומית אמינה" }
+      ],
+      "technologies": [
+        {
+          "name": "ELiTE Lithium",
+          "icon": "battery",
+          "description": "סוללות ליתיום ללא תחזוקה"
+        },
+        {
+          "name": "LED Premium",
+          "icon": "light",
+          "description": "תאורת LED מלאה לנראות בכל תנאי"
+        },
+        {
+          "name": "ECOXGEAR",
+          "icon": "speaker",
+          "description": "מערכת מולטימדיה עם מסך מגע ו-Bluetooth"
+        }
+      ],
+      "videoId": null,
       "images": [
         "https://ezgo.txtsv.com/sites/default/files/2025-11/Express4_SummitXTL_Black_v25_960x720.png",
         "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express4_CC_2470.jpg",
         "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express4_CC_7810.jpg",
         "https://ezgo.txtsv.com/sites/default/files/2025-12/EZGO_CON_2025_Express4_CC_7792.jpg"
       ],
-      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express4_CC_2045.jpg"
+      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express4_CC_2045.jpg",
+      "lifestyleImage": "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express4_CC_7810.jpg"
     },
     {
       "slug": "express-6-elite",
@@ -113,13 +289,56 @@
         "בלם חניה אוטומטי",
         "אפשרויות פנים פרימיום"
       ],
+      "specs": {
+        "maxSpeed": "31 קמ\"ש",
+        "range": "50 ק\"מ",
+        "weight": "485 ק\"ג",
+        "length": "380 ס\"מ",
+        "width": "122 ס\"מ",
+        "height": "180 ס\"מ",
+        "groundClearance": "10 ס\"מ",
+        "cargoCapacity": "225 ק\"ג",
+        "battery": "סוללת ליתיום Samsung SDI 48V מוגברת",
+        "chargeTime": "6-7 שעות",
+        "motor": "מנוע AC גבוה-ביצועים"
+      },
+      "colors": [
+        { "name": "לבן בהיר", "hex": "#f5f5f5" },
+        { "name": "שחור", "hex": "#1a1a1a" },
+        { "name": "פלטינום", "hex": "#a8a8a8" },
+        { "name": "אפור מטאלי", "hex": "#5c5c5c" }
+      ],
+      "useCases": [
+        { "icon": "resort", "title": "אתרי נופש", "description": "הסעת קבוצות אורחים" },
+        { "icon": "kibbutz", "title": "קיבוצים ומושבים", "description": "הסעת משפחות ותושבים" },
+        { "icon": "hotel", "title": "מלונות", "description": "שירותי הסעה ברמה גבוהה" }
+      ],
+      "technologies": [
+        {
+          "name": "IntelliBrake",
+          "icon": "brake",
+          "description": "בלם חניה אוטומטי לבטיחות מרבית"
+        },
+        {
+          "name": "ELiTE Lithium",
+          "icon": "battery",
+          "description": "סוללה מוגברת לנשיאת 6 נוסעים"
+        },
+        {
+          "name": "Rear Camera",
+          "icon": "camera",
+          "description": "מצלמה אחורית לנסיעה לאחור בטוחה"
+        }
+      ],
+      "videoId": null,
       "images": [
         "https://ezgo.txtsv.com/sites/default/files/2025-12/Express6_SummitXTL_White_v25_960x720.png",
         "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express6_CC_0807.jpg",
         "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express6_CC_7756.jpg",
         "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express6_CC_7816.jpg"
       ],
-      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express6_CC_8613.jpg"
+      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express6_CC_8613.jpg",
+      "lifestyleImage": "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express6_CC_0807.jpg"
     },
     {
       "slug": "rxv-2-gas",
@@ -137,11 +356,54 @@
         "אידיאלי לשטחים גדולים",
         "תחזוקה פשוטה"
       ],
+      "specs": {
+        "maxSpeed": "31 קמ\"ש",
+        "range": "ללא הגבלה (תדלוק)",
+        "weight": "320 ק\"ג",
+        "length": "239 ס\"מ",
+        "width": "119 ס\"מ",
+        "height": "178 ס\"מ",
+        "groundClearance": "10 ס\"מ",
+        "cargoCapacity": "135 ק\"ג",
+        "engine": "EX1 Gas - 404cc",
+        "fuelCapacity": "22 ליטר",
+        "fuelEconomy": "צריכת דלק נמוכה במיוחד"
+      },
+      "colors": [
+        { "name": "כחול פטריוט", "hex": "#1e3a5f" },
+        { "name": "לבן בהיר", "hex": "#f5f5f5" },
+        { "name": "שחור", "hex": "#1a1a1a" },
+        { "name": "פלטינום", "hex": "#a8a8a8" }
+      ],
+      "useCases": [
+        { "icon": "golf", "title": "מגרשי גולף גדולים", "description": "טווח בלתי מוגבל לשטחים נרחבים" },
+        { "icon": "farm", "title": "חקלאות", "description": "כוח ועמידות לעבודה בשטח" },
+        { "icon": "kibbutz", "title": "קיבוצים", "description": "אמינות לאורך זמן" }
+      ],
+      "technologies": [
+        {
+          "name": "EX1 Engine",
+          "icon": "engine",
+          "description": "מנוע בנזין 404cc חסכוני ושקט עם מומנט גבוה"
+        },
+        {
+          "name": "IntelliBrake",
+          "icon": "brake",
+          "description": "בלם חניה אוטומטי לבטיחות"
+        },
+        {
+          "name": "Low Maintenance",
+          "icon": "wrench",
+          "description": "תחזוקה פשוטה ועלות תפעול נמוכה"
+        }
+      ],
+      "videoId": null,
       "images": [
         "https://ezgo.txtsv.com/sites/default/files/2025-05/FreedomRXV_CON_2Pass_PatriotBlue_v28_960x720.png",
         "https://ezgo.txtsv.com/sites/default/files/2025-05/Valor2_Cruiser_White_v31_960x720.png"
       ],
-      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2025-05/FreedomRXV_CON_2Pass_PatriotBlue_v28_960x720.png"
+      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2025-05/FreedomRXV_CON_2Pass_PatriotBlue_v28_960x720.png",
+      "lifestyleImage": "https://ezgo.txtsv.com/sites/default/files/2025-05/EZGO_CON_FreedomRXV_PACE_2023_CC_0366_840x472.jpg"
     },
     {
       "slug": "rxv-4-gas",
@@ -159,11 +421,54 @@
         "פנסי LED קדמיים ואחוריים",
         "מסך מגע ECOXGEAR אופציונלי"
       ],
+      "specs": {
+        "maxSpeed": "31 קמ\"ש",
+        "range": "ללא הגבלה (תדלוק)",
+        "weight": "410 ק\"ג",
+        "length": "305 ס\"מ",
+        "width": "119 ס\"מ",
+        "height": "178 ס\"מ",
+        "groundClearance": "10 ס\"מ",
+        "cargoCapacity": "180 ק\"ג",
+        "engine": "EX1 Gas - 404cc",
+        "fuelCapacity": "22 ליטר",
+        "fuelEconomy": "צריכת דלק חסכונית"
+      },
+      "colors": [
+        { "name": "אפור אושן", "hex": "#6b7b8c" },
+        { "name": "שחור", "hex": "#1a1a1a" },
+        { "name": "לבן בהיר", "hex": "#f5f5f5" },
+        { "name": "פלטינום", "hex": "#a8a8a8" }
+      ],
+      "useCases": [
+        { "icon": "golf", "title": "מגרשי גולף", "description": "הסעת קבוצות עם ציוד" },
+        { "icon": "farm", "title": "משקים חקלאיים", "description": "כוח לעבודה בשטח" },
+        { "icon": "resort", "title": "אתרי נופש", "description": "הסעה אמינה לאורחים" }
+      ],
+      "technologies": [
+        {
+          "name": "EX1 Engine",
+          "icon": "engine",
+          "description": "מנוע בנזין 404cc עם מומנט גבוה"
+        },
+        {
+          "name": "IntelliBrake",
+          "icon": "brake",
+          "description": "בלם חניה אוטומטי"
+        },
+        {
+          "name": "LED Lighting",
+          "icon": "light",
+          "description": "תאורת LED מלאה"
+        }
+      ],
+      "videoId": null,
       "images": [
         "https://ezgo.txtsv.com/sites/default/files/2025-05/FreedomRXV_CON_4Pass_OceanGrey_v28_960x720_0.png",
         "https://ezgo.txtsv.com/sites/default/files/2025-05/Valor4_Cruiser_Black_v31_960x720.png"
       ],
-      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2025-05/FreedomRXV_CON_4Pass_OceanGrey_v28_960x720_0.png"
+      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2025-05/FreedomRXV_CON_4Pass_OceanGrey_v28_960x720_0.png",
+      "lifestyleImage": "https://ezgo.txtsv.com/sites/default/files/2025-05/FreedomRXV_CON_4Pass_OceanGrey_v28_960x720_0.png"
     },
     {
       "slug": "express-4-gas",
@@ -181,11 +486,53 @@
         "אפשרויות מושבים פרימיום",
         "מסך מגע וסאונד בר אופציונלי"
       ],
+      "specs": {
+        "maxSpeed": "31 קמ\"ש",
+        "range": "ללא הגבלה (תדלוק)",
+        "weight": "420 ק\"ג",
+        "length": "310 ס\"מ",
+        "width": "122 ס\"מ",
+        "height": "180 ס\"מ",
+        "groundClearance": "11 ס\"מ",
+        "cargoCapacity": "190 ק\"ג",
+        "engine": "13.5 HP Gas Engine",
+        "fuelCapacity": "22 ליטר",
+        "fuelEconomy": "צריכה חסכונית"
+      },
+      "colors": [
+        { "name": "פלטינום", "hex": "#a8a8a8" },
+        { "name": "שחור", "hex": "#1a1a1a" },
+        { "name": "לבן בהיר", "hex": "#f5f5f5" }
+      ],
+      "useCases": [
+        { "icon": "golf", "title": "מגרשי גולף", "description": "ביצועים גבוהים בשטח" },
+        { "icon": "community", "title": "קהילות", "description": "נסיעה יומיומית אמינה" },
+        { "icon": "kibbutz", "title": "קיבוצים", "description": "עמידות לשימוש אינטנסיבי" }
+      ],
+      "technologies": [
+        {
+          "name": "High Power Engine",
+          "icon": "engine",
+          "description": "מנוע 13.5 כ\"ס לביצועים מעולים"
+        },
+        {
+          "name": "LED Premium",
+          "icon": "light",
+          "description": "תאורת LED מלאה"
+        },
+        {
+          "name": "Lifted Option",
+          "icon": "lift",
+          "description": "אפשרות גובה מורם לשטח"
+        }
+      ],
+      "videoId": null,
       "images": [
         "https://ezgo.txtsv.com/sites/default/files/2026-01/Express4_TouringS_Platinum_v25_960x720.png",
         "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express4_CC_2470.jpg"
       ],
-      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2026-01/Express4_TouringS_Platinum_v25_960x720.png"
+      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2026-01/Express4_TouringS_Platinum_v25_960x720.png",
+      "lifestyleImage": "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express4_CC_2470.jpg"
     },
     {
       "slug": "express-6-gas",
@@ -204,11 +551,53 @@
         "בלם חניה אוטומטי",
         "אידיאלי להסעת קבוצות"
       ],
+      "specs": {
+        "maxSpeed": "31 קמ\"ש",
+        "range": "ללא הגבלה (תדלוק)",
+        "weight": "510 ק\"ג",
+        "length": "380 ס\"מ",
+        "width": "122 ס\"מ",
+        "height": "180 ס\"מ",
+        "groundClearance": "10 ס\"מ",
+        "cargoCapacity": "270 ק\"ג",
+        "engine": "13.5 HP Gas Engine",
+        "fuelCapacity": "26 ליטר",
+        "fuelEconomy": "צריכה סבירה"
+      },
+      "colors": [
+        { "name": "אפור מטאלי", "hex": "#5c5c5c" },
+        { "name": "שחור", "hex": "#1a1a1a" },
+        { "name": "לבן בהיר", "hex": "#f5f5f5" }
+      ],
+      "useCases": [
+        { "icon": "resort", "title": "אתרי נופש", "description": "הסעת קבוצות אורחים" },
+        { "icon": "kibbutz", "title": "קיבוצים", "description": "הסעה יומיומית לתושבים" },
+        { "icon": "hotel", "title": "מלונות", "description": "שירותי שאטל" }
+      ],
+      "technologies": [
+        {
+          "name": "High Power Engine",
+          "icon": "engine",
+          "description": "מנוע 13.5 כ\"ס לנשיאת 6 נוסעים"
+        },
+        {
+          "name": "IntelliBrake",
+          "icon": "brake",
+          "description": "בלם חניה אוטומטי"
+        },
+        {
+          "name": "Extended Legroom",
+          "icon": "comfort",
+          "description": "מרווח רגליים מורחב לנוחות"
+        }
+      ],
+      "videoId": null,
       "images": [
         "https://ezgo.txtsv.com/sites/default/files/2026-01/Express6_TouringS_MetallicCharcoal_v25_960x720.png",
         "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express6_CC_7816.jpg"
       ],
-      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2026-01/Express6_TouringS_MetallicCharcoal_v25_960x720.png"
+      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2026-01/Express6_TouringS_MetallicCharcoal_v25_960x720.png",
+      "lifestyleImage": "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express6_CC_7816.jpg"
     },
     {
       "slug": "valor-6",
@@ -227,11 +616,53 @@
         "תא מטען רחב",
         "יחס ערך-מחיר מצוין"
       ],
+      "specs": {
+        "maxSpeed": "31 קמ\"ש",
+        "range": "45 ק\"מ (חשמל) / ללא הגבלה (בנזין)",
+        "weight": "460 ק\"ג",
+        "length": "365 ס\"מ",
+        "width": "122 ס\"מ",
+        "height": "180 ס\"מ",
+        "groundClearance": "10 ס\"מ",
+        "cargoCapacity": "250 ק\"ג",
+        "battery": "סוללת ליתיום 48V (בגרסה חשמלית)",
+        "chargeTime": "6-7 שעות",
+        "motor": "מנוע AC / מנוע בנזין"
+      },
+      "colors": [
+        { "name": "פלטינום", "hex": "#a8a8a8" },
+        { "name": "שחור", "hex": "#1a1a1a" },
+        { "name": "לבן בהיר", "hex": "#f5f5f5" }
+      ],
+      "useCases": [
+        { "icon": "kibbutz", "title": "קיבוצים ומושבים", "description": "פתרון הסעה כלכלי" },
+        { "icon": "community", "title": "קהילות מגורים", "description": "הסעה יומיומית למשפחות" },
+        { "icon": "resort", "title": "אתרי נופש", "description": "יחס מחיר-ביצועים מעולה" }
+      ],
+      "technologies": [
+        {
+          "name": "Dual Power Options",
+          "icon": "power",
+          "description": "בחירה בין חשמל לבנזין לפי הצורך"
+        },
+        {
+          "name": "LED Standard",
+          "icon": "light",
+          "description": "תאורת LED סטנדרטית בכל הגרסאות"
+        },
+        {
+          "name": "Value Design",
+          "icon": "value",
+          "description": "עיצוב חכם שמקסם ערך לכסף"
+        }
+      ],
+      "videoId": null,
       "images": [
         "https://ezgo.txtsv.com/sites/default/files/2025-12/Valor6_S_Connect_Platinum_v25_960x720.png",
         "https://ezgo.txtsv.com/sites/default/files/2025-12/Valor6_S%2B_Connect_Platinum_v25_960x720.png"
       ],
-      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2025-12/Valor6_S_Connect_Platinum_v25_960x720.png"
+      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2025-12/Valor6_S_Connect_Platinum_v25_960x720.png",
+      "lifestyleImage": "https://ezgo.txtsv.com/sites/default/files/2025-12/Valor6_S%2B_Connect_Platinum_v25_960x720.png"
     },
     {
       "slug": "cushman-hauler-pro",
@@ -250,10 +681,52 @@
         "אידיאלי למפעלים ומתקנים",
         "מותג Cushman מבית Textron"
       ],
+      "specs": {
+        "maxSpeed": "25 קמ\"ש",
+        "range": "80 ק\"מ",
+        "weight": "540 ק\"ג",
+        "length": "295 ס\"מ",
+        "width": "140 ס\"מ",
+        "height": "185 ס\"מ",
+        "groundClearance": "13 ס\"מ",
+        "cargoCapacity": "545 ק\"ג",
+        "battery": "סוללת ליתיום תעשייתית 48V",
+        "chargeTime": "6-8 שעות",
+        "motor": "מנוע AC תעשייתי"
+      },
+      "colors": [
+        { "name": "ירוק תעשייתי", "hex": "#3d6b3d" },
+        { "name": "לבן", "hex": "#f5f5f5" },
+        { "name": "שחור", "hex": "#1a1a1a" }
+      ],
+      "useCases": [
+        { "icon": "factory", "title": "מפעלים", "description": "הובלת חומרים וציוד" },
+        { "icon": "warehouse", "title": "מחסנים", "description": "עבודה במרחבים סגורים" },
+        { "icon": "airport", "title": "נמלי תעופה", "description": "שירותי קרקע ותחזוקה" }
+      ],
+      "technologies": [
+        {
+          "name": "Industrial Grade",
+          "icon": "factory",
+          "description": "בנוי לעמידות תעשייתית עם רכיבים מחוזקים"
+        },
+        {
+          "name": "High Capacity",
+          "icon": "cargo",
+          "description": "קיבולת משא של 545 ק\"ג"
+        },
+        {
+          "name": "Zero Emissions",
+          "icon": "leaf",
+          "description": "הנעה חשמלית ללא פליטות - מותאם לעבודה פנימית"
+        }
+      ],
+      "videoId": null,
       "images": [
         "https://ezgo.txtsv.com/sites/default/files/2024-01/CUS_GOF_HaulerPRO_ELiTE_2022_04543.jpg"
       ],
-      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2024-01/CUS_GOF_HaulerPRO_ELiTE_2022_04543.jpg"
+      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2024-01/CUS_GOF_HaulerPRO_ELiTE_2022_04543.jpg",
+      "lifestyleImage": "https://ezgo.txtsv.com/sites/default/files/2024-01/CUS_GOF_HaulerPRO_ELiTE_2022_04543.jpg"
     },
     {
       "slug": "hauler-800",
@@ -265,17 +738,59 @@
       "tagline": "Heavy Duty Performance",
       "badge": "Industrial",
       "features": [
-        "קיבולת משא 800 ליברות",
+        "קיבולת משא 363 ק\"ג",
         "ארגז מטען רחב",
         "עיצוב תעשייתי עמיד",
         "אפשרות חשמל או בנזין",
         "אידיאלי לקיבוצים ומושבים",
         "תחזוקה פשוטה ועלות תפעול נמוכה"
       ],
+      "specs": {
+        "maxSpeed": "25 קמ\"ש",
+        "range": "65 ק\"מ (חשמל) / ללא הגבלה (בנזין)",
+        "weight": "495 ק\"ג",
+        "length": "285 ס\"מ",
+        "width": "135 ס\"מ",
+        "height": "180 ס\"מ",
+        "groundClearance": "12 ס\"מ",
+        "cargoCapacity": "363 ק\"ג",
+        "battery": "סוללת ליתיום 48V (בגרסה חשמלית)",
+        "chargeTime": "5-6 שעות",
+        "motor": "מנוע AC / מנוע בנזין"
+      },
+      "colors": [
+        { "name": "ירוק תעשייתי", "hex": "#3d6b3d" },
+        { "name": "לבן", "hex": "#f5f5f5" },
+        { "name": "אפור", "hex": "#6b7b8c" }
+      ],
+      "useCases": [
+        { "icon": "kibbutz", "title": "קיבוצים ומושבים", "description": "הובלת משאות בשטח" },
+        { "icon": "farm", "title": "חקלאות", "description": "עבודה בשדות ובמטעים" },
+        { "icon": "warehouse", "title": "מחסנים", "description": "הובלה פנימית יעילה" }
+      ],
+      "technologies": [
+        {
+          "name": "Dual Power Options",
+          "icon": "power",
+          "description": "בחירה בין חשמל לבנזין"
+        },
+        {
+          "name": "Heavy Duty Bed",
+          "icon": "cargo",
+          "description": "ארגז מטען מחוזק לעומסים כבדים"
+        },
+        {
+          "name": "Low Maintenance",
+          "icon": "wrench",
+          "description": "תחזוקה מינימלית ועלות תפעול נמוכה"
+        }
+      ],
+      "videoId": null,
       "images": [
         "https://ezgo.txtsv.com/sites/default/files/2024-01/CUS_GOF_HaulerPRO_ELiTE_2022_04543.jpg"
       ],
-      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2024-01/CUS_GOF_HaulerPRO_ELiTE_2022_04543.jpg"
+      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2024-01/CUS_GOF_HaulerPRO_ELiTE_2022_04543.jpg",
+      "lifestyleImage": "https://ezgo.txtsv.com/sites/default/files/2024-01/CUS_GOF_HaulerPRO_ELiTE_2022_04543.jpg"
     }
   ],
   "categories": {

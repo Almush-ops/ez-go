@@ -49,6 +49,10 @@ const faqItems = [
     answer: `${model.name} מציע ${model.seats} מושבים נוחים. ${model.seats >= 4 ? 'המבנה מאפשר ישיבה נוחה לכל הנוסעים עם מרווח רגליים מספק.' : 'הרכב קומפקטי ומתאים למגרשי גולף ולנסיעות קצרות.'}`,
   },
   {
+    question: `מה טווח הנסיעה של ${model.name}?`,
+    answer: `${model.name} מציע טווח של ${model.specs?.range || 'תלוי בדגם'}. ${model.category === 'electric' ? 'טווח הנסיעה תלוי בתנאי השטח, משקל הנוסעים ואופן הנהיגה.' : 'ברכבי בנזין הטווח בלתי מוגבל - פשוט תדלקו והמשיכו.'}`,
+  },
+  {
     question: `האם ${model.name} מתאים לקיבוץ או אתר נופש?`,
     answer: `כן, ${model.name} מתאים מאוד לשימוש בקיבוצים, מושבים, אתרי נופש ומלונות. הרכב בנוי לעמוד בשימוש יומיומי אינטנסיבי ומספק פתרון הסעה יעיל ונוח.`,
   },
@@ -57,11 +61,45 @@ const faqItems = [
     answer: `E-Z-GO מספקת אחריות יצרן על כל רכביה. תנאי האחריות המדויקים תלויים בדגם ובסוג השימוש. צרו קשר לקבלת פרטים מלאים על תנאי האחריות.`,
   },
 ];
+
+// Icon mapping for technologies
+const techIcons: Record<string, string> = {
+  brake: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" d="M12 8v4M12 16h.01"/></svg>`,
+  battery: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><rect x="6" y="7" width="12" height="10" rx="1"/><path d="M10 7V5h4v2M9 11h6M9 14h4"/></svg>`,
+  motor: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4m10-10h-4M6 12H2m15.07-5.07l-2.83 2.83m-8.48 0L2.93 6.93m16.14 11.14l-2.83-2.83m-8.48 0l-2.83 2.83"/></svg>`,
+  light: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M12 2v2m0 16v2m10-10h-2M4 12H2m15.07-5.07l-1.41-1.41M6.34 17.66l-1.41 1.41m12.14 0l-1.41-1.41M6.34 6.34L4.93 4.93"/><circle cx="12" cy="12" r="4"/></svg>`,
+  road: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M4 19h4M16 19h4M12 5v14M9 5l3-3 3 3M6 9l-4 10h20L18 9"/></svg>`,
+  comfort: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12v6a2 2 0 002 2h10a2 2 0 002-2v-6"/></svg>`,
+  speaker: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14"/></svg>`,
+  camera: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><rect x="3" y="7" width="18" height="12" rx="2"/><circle cx="12" cy="13" r="3"/><path d="M7 7V5a2 2 0 012-2h6a2 2 0 012 2v2"/></svg>`,
+  engine: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><rect x="4" y="8" width="16" height="10" rx="1"/><path d="M8 8V6h8v2M6 12h12M10 15h4"/></svg>`,
+  wrench: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>`,
+  factory: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M2 20h20M4 20V10l4 3V8l4 3V6l4 3V4l4 3v13"/></svg>`,
+  cargo: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><rect x="3" y="10" width="18" height="10" rx="1"/><path d="M7 10V7a2 2 0 012-2h6a2 2 0 012 2v3"/></svg>`,
+  leaf: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M12 22c4-4 8-8 8-14a8 8 0 00-16 0c0 6 4 10 8 14z"/><path d="M12 22V8"/></svg>`,
+  power: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>`,
+  value: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/><circle cx="12" cy="12" r="6"/><path d="M12 9v3l2 2"/></svg>`,
+  lift: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M12 19V5m0 0l-4 4m4-4l4 4"/></svg>`,
+};
+
+// Icon mapping for use cases
+const useCaseIcons: Record<string, string> = {
+  golf: `<svg class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="18" r="4"/><path d="M12 2v12M8 6l4 2 4-2"/></svg>`,
+  community: `<svg class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>`,
+  resort: `<svg class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M12 3L2 12h3v9h6v-6h2v6h6v-9h3L12 3z"/></svg>`,
+  kibbutz: `<svg class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>`,
+  hotel: `<svg class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 4v16M15 4v16M4 9h16M4 15h16"/></svg>`,
+  street: `<svg class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M4 19h4m8 0h4M12 3v18M9 7l3-4 3 4M6 11h12"/></svg>`,
+  farm: `<svg class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M4 21V10l8-7 8 7v11M12 21v-6"/></svg>`,
+  factory: `<svg class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M2 20h20M4 20V10l4 3V8l4 3V6l4 3V4l4 3v13"/></svg>`,
+  warehouse: `<svg class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><rect x="3" y="8" width="18" height="12" rx="1"/><path d="M3 8l9-5 9 5M9 14h6M9 17h6"/></svg>`,
+  airport: `<svg class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M12 19l-7-7 1.41-1.41L12 16.17V3h2v13.17l5.59-5.58L21 12l-7 7z"/></svg>`,
+};
 ---
 
 <BaseLayout
   title={`${model.name} - ${model.hebrewName} | EZ-GO Israel`}
-  description={`${model.hebrewName} - ${model.tagline}. ${model.seats} מושבים, מערכת ${model.powerType}. צרו קשר לייעוץ מקצועי והצעת מחיר.`}
+  description={`${model.hebrewName} - ${model.tagline}. ${model.seats} מושבים, מערכת ${model.powerType}. מפרט טכני, צבעים ותכונות. צרו קשר לייעוץ מקצועי.`}
 >
   <!-- Breadcrumbs Bar -->
   <section class="bg-gradient-to-bl from-ezgo-900 via-ezgo-800 to-dark text-white py-3">
@@ -160,26 +198,34 @@ const faqItems = [
             </span>
           )}
           <h1 class="text-3xl md:text-4xl font-bold text-dark mb-2">{model.name}</h1>
-          <p class="text-xl text-gray-600 mb-4">{model.hebrewName}</p>
+          <p class="text-xl text-gray-600 mb-2">{model.hebrewName}</p>
           <p class="text-lg text-ezgo-600 font-medium mb-6">{model.tagline}</p>
 
-          <!-- Specs -->
-          <div class="grid grid-cols-2 gap-4 mb-6">
-            <div class="bg-surface rounded-lg p-4">
-              <div class="text-sm text-gray-500 mb-1">מושבים</div>
-              <div class="text-xl font-bold text-dark">{model.seats}</div>
+          <!-- Quick Specs Grid -->
+          <div class="grid grid-cols-2 gap-3 mb-6">
+            <div class="bg-surface rounded-lg p-4 text-center">
+              <div class="text-2xl font-bold text-ezgo-600">{model.seats}</div>
+              <div class="text-sm text-gray-500">מושבים</div>
             </div>
-            <div class="bg-surface rounded-lg p-4">
-              <div class="text-sm text-gray-500 mb-1">מערכת הנעה</div>
-              <div class="text-lg font-bold text-dark">{model.powerType}</div>
+            <div class="bg-surface rounded-lg p-4 text-center">
+              <div class="text-lg font-bold text-ezgo-600">{model.specs?.maxSpeed || '31 קמ"ש'}</div>
+              <div class="text-sm text-gray-500">מהירות מקס׳</div>
+            </div>
+            <div class="bg-surface rounded-lg p-4 text-center">
+              <div class="text-lg font-bold text-ezgo-600">{model.specs?.range || 'N/A'}</div>
+              <div class="text-sm text-gray-500">טווח נסיעה</div>
+            </div>
+            <div class="bg-surface rounded-lg p-4 text-center">
+              <div class="text-lg font-bold text-ezgo-600">{model.powerType.split(' / ')[0]}</div>
+              <div class="text-sm text-gray-500">מערכת הנעה</div>
             </div>
           </div>
 
-          <!-- Features -->
-          <div class="mb-8">
+          <!-- Features List -->
+          <div class="mb-6">
             <h2 class="text-lg font-bold text-dark mb-3">תכונות עיקריות</h2>
             <ul class="space-y-2">
-              {model.features.map((feature: string) => (
+              {model.features.slice(0, 5).map((feature: string) => (
                 <li class="flex items-start gap-2">
                   <svg class="w-5 h-5 text-ezgo-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
@@ -213,22 +259,183 @@ const faqItems = [
     </div>
   </section>
 
-  <!-- Description Section -->
-  <section class="py-12 bg-surface">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-2xl font-bold text-dark mb-6">אודות {model.name}</h2>
-      <div class="prose prose-lg max-w-none text-gray-700">
-        <p>
-          {model.name} הוא אחד מדגמי הדגל של E-Z-GO, המציע שילוב מושלם של ביצועים, נוחות ואמינות.
-          {model.category === 'electric' && 'עם טכנולוגיית ELiTE Lithium המתקדמת, הרכב מספק טווח נסיעה ארוך, טעינה מהירה וביצועים עקביים לאורך כל הנסיעה.'}
-          {model.category === 'gas' && 'מנוע הבנזין EX1 החזק והחסכוני מספק עוצמה יוצאת דופן לכל משימה, עם תחזוקה פשוטה ואמינות לאורך שנים.'}
-          {model.category === 'cargo' && 'הרכב מיועד להסעת נוסעים בנוחות מרבית, ומתאים במיוחד לקיבוצים, מושבים, אתרי נופש ומלונות.'}
-          {model.category === 'industrial' && 'עיצוב תעשייתי עמיד שנבנה לעמוד בתנאי עבודה קשים, עם קיבולת משא גבוהה וגודל קומפקטי למעבר בשטחים צרים.'}
-        </p>
-        <p>
-          E-Z-GO, חלק מקבוצת Textron העולמית, מייצרת רכבים תפעוליים מאז 1954 ונחשבת למותג המוביל בתחום.
-          כל רכב עובר בקרת איכות קפדנית ומגיע עם אחריות יצרן.
-        </p>
+  <!-- Technical Specifications Table -->
+  {model.specs && (
+    <section class="py-12 bg-surface">
+      <div class="max-w-4xl mx-auto px-4">
+        <h2 class="text-2xl font-bold text-dark mb-6 text-center">מפרט טכני</h2>
+        <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+          <table class="w-full">
+            <tbody class="divide-y divide-gray-100">
+              {model.specs.maxSpeed && (
+                <tr class="hover:bg-gray-50 transition-colors">
+                  <td class="py-4 px-6 text-gray-500 font-medium">מהירות מקסימלית</td>
+                  <td class="py-4 px-6 text-dark font-semibold text-start">{model.specs.maxSpeed}</td>
+                </tr>
+              )}
+              {model.specs.range && (
+                <tr class="hover:bg-gray-50 transition-colors">
+                  <td class="py-4 px-6 text-gray-500 font-medium">טווח נסיעה</td>
+                  <td class="py-4 px-6 text-dark font-semibold text-start">{model.specs.range}</td>
+                </tr>
+              )}
+              {(model.specs.battery || model.specs.engine) && (
+                <tr class="hover:bg-gray-50 transition-colors">
+                  <td class="py-4 px-6 text-gray-500 font-medium">{model.category === 'gas' ? 'מנוע' : 'סוללה'}</td>
+                  <td class="py-4 px-6 text-dark font-semibold text-start">{model.specs.battery || model.specs.engine}</td>
+                </tr>
+              )}
+              {(model.specs.chargeTime || model.specs.fuelCapacity) && (
+                <tr class="hover:bg-gray-50 transition-colors">
+                  <td class="py-4 px-6 text-gray-500 font-medium">{model.category === 'gas' ? 'נפח מיכל' : 'זמן טעינה'}</td>
+                  <td class="py-4 px-6 text-dark font-semibold text-start">{model.specs.chargeTime || model.specs.fuelCapacity}</td>
+                </tr>
+              )}
+              {model.specs.weight && (
+                <tr class="hover:bg-gray-50 transition-colors">
+                  <td class="py-4 px-6 text-gray-500 font-medium">משקל</td>
+                  <td class="py-4 px-6 text-dark font-semibold text-start">{model.specs.weight}</td>
+                </tr>
+              )}
+              {model.specs.cargoCapacity && (
+                <tr class="hover:bg-gray-50 transition-colors">
+                  <td class="py-4 px-6 text-gray-500 font-medium">קיבולת משא</td>
+                  <td class="py-4 px-6 text-dark font-semibold text-start">{model.specs.cargoCapacity}</td>
+                </tr>
+              )}
+              {model.specs.length && (
+                <tr class="hover:bg-gray-50 transition-colors">
+                  <td class="py-4 px-6 text-gray-500 font-medium">מידות (א×ר×ג)</td>
+                  <td class="py-4 px-6 text-dark font-semibold text-start">{model.specs.length} × {model.specs.width} × {model.specs.height}</td>
+                </tr>
+              )}
+              {model.specs.groundClearance && (
+                <tr class="hover:bg-gray-50 transition-colors">
+                  <td class="py-4 px-6 text-gray-500 font-medium">גובה מהקרקע</td>
+                  <td class="py-4 px-6 text-dark font-semibold text-start">{model.specs.groundClearance}</td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Technologies Section -->
+  {model.technologies && model.technologies.length > 0 && (
+    <section class="py-12 md:py-16 bg-white">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl font-bold text-dark mb-8 text-center">טכנולוגיות מתקדמות</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          {model.technologies.map((tech: { name: string; icon: string; description: string }) => (
+            <div class="bg-gradient-to-br from-ezgo-50 to-white rounded-xl p-6 border border-ezgo-100 hover:shadow-lg transition-shadow">
+              <div class="w-14 h-14 bg-ezgo-500 rounded-xl flex items-center justify-center text-white mb-4">
+                <Fragment set:html={techIcons[tech.icon] || techIcons.battery} />
+              </div>
+              <h3 class="text-lg font-bold text-dark mb-2">{tech.name}</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">{tech.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Use Cases Section -->
+  {model.useCases && model.useCases.length > 0 && (
+    <section class="py-12 md:py-16 bg-gradient-to-br from-ezgo-900 via-ezgo-800 to-dark text-white">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl font-bold mb-2 text-center">מי משתמש ב-{model.name}?</h2>
+        <p class="text-ezgo-200 text-center mb-10">מתאים למגוון רחב של שימושים</p>
+        <div class="grid md:grid-cols-3 gap-6">
+          {model.useCases.map((useCase: { icon: string; title: string; description: string }) => (
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-white/15 transition-colors">
+              <div class="w-16 h-16 bg-cyan/20 rounded-full flex items-center justify-center mx-auto mb-4 text-cyan">
+                <Fragment set:html={useCaseIcons[useCase.icon] || useCaseIcons.community} />
+              </div>
+              <h3 class="text-lg font-bold mb-2">{useCase.title}</h3>
+              <p class="text-gray-300 text-sm">{useCase.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Colors Section -->
+  {model.colors && model.colors.length > 0 && (
+    <section class="py-12 bg-surface">
+      <div class="max-w-4xl mx-auto px-4">
+        <h2 class="text-2xl font-bold text-dark mb-6 text-center">צבעים זמינים</h2>
+        <div class="flex flex-wrap justify-center gap-4">
+          {model.colors.map((color: { name: string; hex: string }) => (
+            <div class="flex flex-col items-center gap-2 group">
+              <div
+                class="w-16 h-16 rounded-full border-4 border-white shadow-lg group-hover:scale-110 transition-transform"
+                style={`background-color: ${color.hex};`}
+              ></div>
+              <span class="text-sm text-gray-600 font-medium">{color.name}</span>
+            </div>
+          ))}
+        </div>
+        <p class="text-center text-gray-500 text-sm mt-6">* זמינות הצבעים עשויה להשתנות. צרו קשר לפרטים</p>
+      </div>
+    </section>
+  )}
+
+  <!-- Lifestyle/About Section -->
+  <section class="py-12 md:py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div class="order-2 lg:order-1">
+          <h2 class="text-2xl md:text-3xl font-bold text-dark mb-4">למה לבחור ב-{model.name}?</h2>
+          <div class="prose prose-lg max-w-none text-gray-700 space-y-4">
+            <p>
+              {model.name} הוא אחד מדגמי הדגל של E-Z-GO, המציע שילוב מושלם של ביצועים, נוחות ואמינות.
+              {model.category === 'electric' && 'עם טכנולוגיית ELiTE Lithium המתקדמת, הרכב מספק טווח נסיעה ארוך, טעינה מהירה וביצועים עקביים לאורך כל הנסיעה - ללא צורך בתחזוקת סוללות.'}
+              {model.category === 'gas' && 'מנוע הבנזין EX1 החזק והחסכוני מספק עוצמה יוצאת דופן לכל משימה, עם תחזוקה פשוטה ואמינות לאורך שנים.'}
+              {model.category === 'cargo' && 'הרכב מיועד להסעת נוסעים בנוחות מרבית, ומתאים במיוחד לקיבוצים, מושבים, אתרי נופש ומלונות.'}
+              {model.category === 'industrial' && 'עיצוב תעשייתי עמיד שנבנה לעמוד בתנאי עבודה קשים, עם קיבולת משא גבוהה וגודל קומפקטי למעבר בשטחים צרים.'}
+            </p>
+            <p>
+              E-Z-GO, חלק מקבוצת Textron העולמית (NYSE: TXT), מייצרת רכבים תפעוליים מאז 1954 ונחשבת למותג המוביל בתחום.
+              כל רכב עובר בקרת איכות קפדנית ומגיע עם אחריות יצרן מלאה.
+            </p>
+          </div>
+          <div class="mt-6 flex flex-wrap gap-4">
+            <div class="flex items-center gap-2 text-ezgo-600">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="font-medium">מאז 1954</span>
+            </div>
+            <div class="flex items-center gap-2 text-ezgo-600">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="font-medium">חלק מ-Textron</span>
+            </div>
+            <div class="flex items-center gap-2 text-ezgo-600">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="font-medium">ISO 9001</span>
+            </div>
+          </div>
+        </div>
+        <div class="order-1 lg:order-2">
+          <div class="aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+            <img
+              src={model.lifestyleImage || model.mainImage}
+              alt={`${model.name} בפעולה`}
+              class="w-full h-full object-cover"
+              width="600"
+              height="450"
+              loading="lazy"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -242,24 +449,30 @@ const faqItems = [
           <p class="text-xl text-gray-300 mb-6">
             השאירו פרטים ונחזור אליכם עם ייעוץ מקצועי והצעת מחיר מותאמת אישית.
           </p>
-          <ul class="space-y-2 text-gray-300">
-            <li class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex items-center gap-3">
+              <svg class="w-6 h-6 text-cyan" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
               </svg>
               ייעוץ מקצועי ללא התחייבות
             </li>
-            <li class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+            <li class="flex items-center gap-3">
+              <svg class="w-6 h-6 text-cyan" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
               </svg>
-              התאמה לצרכים שלכם
+              התאמה לצרכים הספציפיים שלכם
             </li>
-            <li class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+            <li class="flex items-center gap-3">
+              <svg class="w-6 h-6 text-cyan" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
               </svg>
-              רשת שירות ארצית
+              רשת שירות ארצית עם 14 מוסכים
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-6 h-6 text-cyan" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              מענה תוך 24 שעות
             </li>
           </ul>
         </div>
@@ -333,7 +546,22 @@ const faqItems = [
       "@type": "PropertyValue",
       "name": "מערכת הנעה",
       "value": model.powerType
-    }
+    },
+    ...(model.specs?.maxSpeed ? [{
+      "@type": "PropertyValue",
+      "name": "מהירות מקסימלית",
+      "value": model.specs.maxSpeed
+    }] : []),
+    ...(model.specs?.range ? [{
+      "@type": "PropertyValue",
+      "name": "טווח נסיעה",
+      "value": model.specs.range
+    }] : []),
+    ...(model.specs?.weight ? [{
+      "@type": "PropertyValue",
+      "name": "משקל",
+      "value": model.specs.weight
+    }] : [])
   ]
 })} />
 
