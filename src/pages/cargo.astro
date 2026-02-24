@@ -54,13 +54,22 @@ const faqItems = [
   title="רכבי משא E-Z-GO - 6 מושבים להסעות | EZ-GO Israel"
   description="רכבי E-Z-GO להסעת נוסעים - 6 מושבים לקהילות, קיבוצים ואתרי נופש. פתרונות הסעה יעילים ונוחים. צרו קשר לייעוץ מקצועי."
 >
-  <!-- Hero -->
-  <section class="bg-gradient-to-bl from-ezgo-900 via-ezgo-800 to-dark text-white py-16">
-    <div class="max-w-7xl mx-auto px-4">
+  <!-- Hero - Category style with background image -->
+  <section class="relative min-h-[400px] flex items-center overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express6_CC_0807.jpg"
+        alt="רכבי משא E-Z-GO"
+        class="w-full h-full object-cover"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-l from-dark/95 via-dark/80 to-dark/50"></div>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 py-16 w-full">
       <Breadcrumbs items={breadcrumbs} />
-      <div class="max-w-3xl mt-6">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">רכבי משא E-Z-GO</h1>
-        <p class="text-xl text-gray-300">
+      <div class="max-w-2xl mt-6 ms-auto text-white">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">רכבי משא E-Z-GO</h1>
+        <p class="text-xl text-gray-200">
           פתרונות הסעה יעילים לקהילות, קיבוצים ואתרי נופש - רכבי 6 מושבים לנוחות מקסימלית.
         </p>
       </div>

@@ -54,13 +54,22 @@ const faqItems = [
   title="רכבים תעשייתיים E-Z-GO ו-Cushman | EZ-GO Israel"
   description="רכבי Cushman ו-E-Z-GO לשימוש תעשייתי - עמידים, חזקים ומותאמים לעבודה במפעלים ומתקנים. צרו קשר לייעוץ מקצועי."
 >
-  <!-- Hero -->
-  <section class="bg-gradient-to-bl from-ezgo-900 via-ezgo-800 to-dark text-white py-16">
-    <div class="max-w-7xl mx-auto px-4">
+  <!-- Hero - Category style with background image -->
+  <section class="relative min-h-[400px] flex items-center overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="https://ezgo.txtsv.com/sites/default/files/2024-01/CUS_GOF_HaulerPRO_ELiTE_2022_04543.jpg"
+        alt="רכבים תעשייתיים E-Z-GO"
+        class="w-full h-full object-cover"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-l from-dark/95 via-dark/80 to-dark/50"></div>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 py-16 w-full">
       <Breadcrumbs items={breadcrumbs} />
-      <div class="max-w-3xl mt-6">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">רכבים לתעשייה</h1>
-        <p class="text-xl text-gray-300">
+      <div class="max-w-2xl mt-6 ms-auto text-white">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">רכבים לתעשייה</h1>
+        <p class="text-xl text-gray-200">
           רכבי Cushman ו-E-Z-GO לשימוש תעשייתי - עמידים, חזקים ומותאמים לעבודה במפעלים, מחסנים ומתקנים.
         </p>
       </div>
