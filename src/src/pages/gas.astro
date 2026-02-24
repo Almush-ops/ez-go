@@ -1,0 +1,258 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import ProductCard from '@/components/ProductCard.astro';
+import ContactForm from '@/components/ContactForm.astro';
+import FAQ from '@/components/FAQ.astro';
+
+const breadcrumbs = [
+  { label: 'רכבי בנזין' },
+];
+
+const models = [
+  {
+    slug: 'rxv-2-gas',
+    name: 'RXV 2 EX1 Gas',
+    hebrewName: 'RXV 2 בנזין - רכב גולף 2 מושבים',
+    seats: 2,
+    powerType: 'EX1 Gas Engine',
+    mainImage: 'https://ezgo.txtsv.com/sites/default/files/2025-05/FreedomRXV_CON_2Pass_PatriotBlue_v28_960x720.png',
+  },
+  {
+    slug: 'rxv-4-gas',
+    name: 'RXV 4 EX1 Gas',
+    hebrewName: 'RXV 4 בנזין - רכב גולף 4 מושבים',
+    seats: 4,
+    powerType: 'EX1 Gas Engine',
+    mainImage: 'https://ezgo.txtsv.com/sites/default/files/2025-05/FreedomRXV_CON_4Pass_OceanGrey_v28_960x720_0.png',
+  },
+  {
+    slug: 'express-4-gas',
+    name: 'Express 4 Gas',
+    hebrewName: 'Express 4 בנזין - רכב גולף 4 מושבים',
+    seats: 4,
+    powerType: '13.5 HP Gas Engine',
+    mainImage: 'https://ezgo.txtsv.com/sites/default/files/2026-01/Express4_TouringS_Platinum_v25_960x720.png',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'מתי עדיף לבחור רכב בנזין במקום חשמלי?',
+    answer: 'רכב בנזין מתאים יותר לשטחים גדולים מאוד, לשימוש אינטנסיבי כל היום ללא הפסקות טעינה, ולאזורים עם גישה מוגבלת לחשמל. הוא גם מספק עוצמה גבוהה יותר לעליות תלולות ומשאות כבדים.',
+  },
+  {
+    question: 'מה היתרונות של מנוע EX1 של E-Z-GO?',
+    answer: 'מנוע EX1 של E-Z-GO הוא מנוע בנזין חזק וחסכוני שפותח במיוחד לרכבים תפעוליים. הוא מספק ביצועים מצוינים, צריכת דלק נמוכה, ותחזוקה פשוטה. המנוע שקט יחסית ומתאים לשימוש בסביבות מגורים.',
+  },
+  {
+    question: 'כמה דלק צורך רכב E-Z-GO בנזין?',
+    answer: 'צריכת הדלק תלויה בתנאי השימוש, אבל בממוצע רכב E-Z-GO עם מנוע בנזין יכול לעבור כ-15-20 ק"מ לליטר בתנאים רגילים. מיכל דלק מלא מספיק בדרך כלל ליום עבודה שלם.',
+  },
+  {
+    question: 'האם רכבי בנזין רועשים?',
+    answer: 'מנועי EX1 של E-Z-GO תוכננו להיות שקטים יחסית. אמנם יש רעש מנוע, אבל הוא נמוך משמעותית ממכוניות רגילות ומתאים לשימוש באזורי מגורים, קיבוצים ואתרי נופש.',
+  },
+];
+---
+
+<BaseLayout
+  title="רכבי E-Z-GO בנזין - מנועי EX1 חזקים | EZ-GO Israel"
+  description="רכבי E-Z-GO עם מנועי בנזין EX1 חזקים וחסכוניים. אידיאליים לשטחים גדולים ולשימוש אינטנסיבי. צרו קשר לייעוץ מקצועי."
+>
+  <!-- Hero - Category style with background image -->
+  <section class="relative min-h-[400px] flex items-center overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="https://ezgo.txtsv.com/sites/default/files/2025-05/FreedomRXV_CON_4Pass_OceanGrey_v28_960x720_0.png"
+        alt="רכבי E-Z-GO בנזין"
+        class="w-full h-full object-cover"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-l from-dark/95 via-dark/80 to-dark/50"></div>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 py-16 w-full">
+      <Breadcrumbs items={breadcrumbs} />
+      <div class="max-w-2xl mt-6 text-white">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">רכבי E-Z-GO בנזין</h1>
+        <p class="text-xl text-gray-200">
+          מנועי EX1 חזקים וחסכוניים - אידיאליים לשטחים גדולים ולשימוש אינטנסיבי ללא הפסקות טעינה.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Models Grid - Right after Hero -->
+  <section class="py-12 md:py-16 bg-surface">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-8">דגמי E-Z-GO בנזין</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {models.map((model) => (
+          <ProductCard
+            name={model.name}
+            hebrewName={model.hebrewName}
+            seats={model.seats}
+            powerType={model.powerType}
+            image={model.mainImage}
+            href={`/models/${model.slug}/`}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="text-center p-4">
+          <div class="w-12 h-12 bg-ezgo-100 rounded-full flex items-center justify-center mx-auto mb-3">
+            <svg class="w-6 h-6 text-ezgo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-dark">כוח מיידי</h3>
+          <p class="text-sm text-gray-600 mt-1">עוצמה גבוהה בעליות</p>
+        </div>
+        <div class="text-center p-4">
+          <div class="w-12 h-12 bg-ezgo-100 rounded-full flex items-center justify-center mx-auto mb-3">
+            <svg class="w-6 h-6 text-ezgo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-dark">שימוש רציף</h3>
+          <p class="text-sm text-gray-600 mt-1">ללא הפסקות טעינה</p>
+        </div>
+        <div class="text-center p-4">
+          <div class="w-12 h-12 bg-ezgo-100 rounded-full flex items-center justify-center mx-auto mb-3">
+            <svg class="w-6 h-6 text-ezgo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-dark">לשטחים גדולים</h3>
+          <p class="text-sm text-gray-600 mt-1">טווח פעולה ארוך</p>
+        </div>
+        <div class="text-center p-4">
+          <div class="w-12 h-12 bg-ezgo-100 rounded-full flex items-center justify-center mx-auto mb-3">
+            <svg class="w-6 h-6 text-ezgo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-dark">תחזוקה פשוטה</h3>
+          <p class="text-sm text-gray-600 mt-1">טיפולים קלים ומהירים</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EX1 Engine Section -->
+  <section class="py-12 md:py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="order-2 lg:order-1">
+          <img
+            src="https://ezgo.txtsv.com/sites/default/files/2025-05/FreedomRXV_CON_4Pass_OceanGrey_v28_960x720_0.png"
+            alt="רכב E-Z-GO בנזין RXV"
+            class="rounded-xl shadow-lg"
+            width="600"
+            height="400"
+            loading="lazy"
+          />
+        </div>
+        <div class="order-1 lg:order-2">
+          <h2 class="text-3xl font-bold text-dark mb-4">מנוע EX1 - כוח ויעילות</h2>
+          <p class="text-gray-600 mb-6">
+            מנוע EX1 של E-Z-GO פותח במיוחד לרכבים תפעוליים ומספק את השילוב האידיאלי של כוח, חסכוניות ואמינות.
+            המנוע שקט יחסית ומתאים לשימוש במגוון סביבות.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-ezgo-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700">מנוע 4-פעימות יעיל וחסכוני</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-ezgo-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700">הפעלה מהירה בכל מזג אוויר</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-ezgo-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700">רמות רעש נמוכות</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-ezgo-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700">תחזוקה פשוטה ונגישה</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA + Form -->
+  <section class="py-12 md:py-16 bg-ezgo-900 text-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-bold mb-4">מעוניינים ברכב E-Z-GO בנזין?</h2>
+          <p class="text-xl text-gray-300 mb-6">
+            השאירו פרטים ונחזור אליכם עם ייעוץ מקצועי והצעת מחיר מותאמת אישית.
+          </p>
+          <ul class="space-y-2 text-gray-300">
+            <li class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              ייעוץ מקצועי ללא התחייבות
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              בחירה בין חשמלי או בנזין
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              רשת שירות ארצית
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ContactForm title="לפרטים נוספים על דגמי הבנזין" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-12 md:py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4">
+      <FAQ items={faqItems} title="שאלות נפוצות על רכבי E-Z-GO בנזין" />
+    </div>
+  </section>
+</BaseLayout>
+
+<!-- ItemList Schema -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "רכבי E-Z-GO בנזין",
+  "description": "רכבי E-Z-GO עם מנועי בנזין EX1",
+  "numberOfItems": models.length,
+  "itemListElement": models.map((model, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": model.hebrewName,
+    "url": `https://ez-go.co.il/models/${model.slug}/`
+  }))
+})} />

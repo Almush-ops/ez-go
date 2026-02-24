@@ -1,0 +1,439 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import ContactForm from '@/components/ContactForm.astro';
+import FAQ from '@/components/FAQ.astro';
+import modelsData from '../../../content/models-data.json';
+
+export function getStaticPaths() {
+  return modelsData.models.map((model) => ({
+    params: { slug: model.slug },
+    props: { model },
+  }));
+}
+
+const { model } = Astro.props;
+
+const categoryNames: Record<string, string> = {
+  electric: 'רכבים חשמליים',
+  gas: 'רכבי בנזין',
+  cargo: 'רכבי משא',
+  industrial: 'רכבים לתעשייה',
+};
+
+const categoryUrls: Record<string, string> = {
+  electric: '/electric/',
+  gas: '/gas/',
+  cargo: '/cargo/',
+  industrial: '/industrial/',
+};
+
+const breadcrumbs = [
+  { label: categoryNames[model.category], href: categoryUrls[model.category] },
+  { label: model.name },
+];
+
+// Get related models (same category, excluding current)
+const relatedModels = modelsData.models
+  .filter(m => m.category === model.category && m.slug !== model.slug)
+  .slice(0, 3);
+
+// Generate FAQ based on model type
+const faqItems = [
+  {
+    question: `מה מערכת ההנעה של ${model.name}?`,
+    answer: `${model.name} מגיע עם מערכת הנעה ${model.powerType}. ${model.category === 'electric' ? 'סוללות הליתיום של E-Z-GO מספקות טווח ארוך, טעינה מהירה וביצועים עקביים ללא תחזוקה.' : model.category === 'gas' ? 'מנועי הבנזין של E-Z-GO חזקים, חסכוניים ומתאימים לשימוש אינטנסיבי.' : 'המערכת תוכננה לביצועים גבוהים ואמינות לאורך זמן.'}`,
+  },
+  {
+    question: `כמה מושבים יש ב-${model.name}?`,
+    answer: `${model.name} מציע ${model.seats} מושבים נוחים. ${model.seats >= 4 ? 'המבנה מאפשר ישיבה נוחה לכל הנוסעים עם מרווח רגליים מספק.' : 'הרכב קומפקטי ומתאים למגרשי גולף ולנסיעות קצרות.'}`,
+  },
+  {
+    question: `האם ${model.name} מתאים לקיבוץ או אתר נופש?`,
+    answer: `כן, ${model.name} מתאים מאוד לשימוש בקיבוצים, מושבים, אתרי נופש ומלונות. הרכב בנוי לעמוד בשימוש יומיומי אינטנסיבי ומספק פתרון הסעה יעיל ונוח.`,
+  },
+  {
+    question: `מה האחריות על ${model.name}?`,
+    answer: `E-Z-GO מספקת אחריות יצרן על כל רכביה. תנאי האחריות המדויקים תלויים בדגם ובסוג השימוש. צרו קשר לקבלת פרטים מלאים על תנאי האחריות.`,
+  },
+];
+---
+
+<BaseLayout
+  title={`${model.name} - ${model.hebrewName} | EZ-GO Israel`}
+  description={`${model.hebrewName} - ${model.tagline}. ${model.seats} מושבים, מערכת ${model.powerType}. צרו קשר לייעוץ מקצועי והצעת מחיר.`}
+>
+  <!-- Breadcrumbs Bar -->
+  <section class="bg-gradient-to-bl from-ezgo-900 via-ezgo-800 to-dark text-white py-3">
+    <div class="max-w-7xl mx-auto px-4">
+      <Breadcrumbs items={breadcrumbs} />
+    </div>
+  </section>
+
+  <!-- Product Section -->
+  <section class="py-8 md:py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
+        <!-- Images Gallery -->
+        <div class="space-y-4">
+          <div class="aspect-square bg-surface rounded-xl overflow-hidden relative group cursor-pointer" id="main-image-container">
+            <img
+              id="main-image"
+              src={model.mainImage}
+              alt={model.hebrewName}
+              class="w-full h-full object-cover transition-transform duration-300"
+              width="600"
+              height="600"
+              loading="eager"
+            />
+            <!-- Zoom hint -->
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+              <span class="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 text-dark text-sm px-3 py-1.5 rounded-full shadow-md">
+                לחצו על תמונה להגדלה
+              </span>
+            </div>
+          </div>
+          {model.images && model.images.length > 0 && (
+            <div class="grid grid-cols-4 gap-2" id="thumbnail-grid">
+              {/* Show main image as first thumbnail */}
+              <button
+                type="button"
+                class="thumbnail-btn aspect-square bg-surface rounded-lg overflow-hidden ring-2 ring-ezgo-500 ring-offset-2 transition-all"
+                data-src={model.mainImage}
+                data-alt={model.hebrewName}
+              >
+                <img
+                  src={model.mainImage}
+                  alt={model.hebrewName}
+                  class="w-full h-full object-cover hover:scale-105 transition-transform"
+                  width="150"
+                  height="150"
+                  loading="lazy"
+                />
+              </button>
+              {model.images.slice(0, 3).map((img: string, i: number) => (
+                <button
+                  type="button"
+                  class="thumbnail-btn aspect-square bg-surface rounded-lg overflow-hidden ring-0 ring-ezgo-500 ring-offset-2 transition-all hover:ring-2"
+                  data-src={img}
+                  data-alt={`${model.name} - תמונה ${i + 2}`}
+                >
+                  <img
+                    src={img}
+                    alt={`${model.name} - תמונה ${i + 2}`}
+                    class="w-full h-full object-cover hover:scale-105 transition-transform"
+                    width="150"
+                    height="150"
+                    loading="lazy"
+                  />
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <!-- Lightbox Modal -->
+        <div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/90 p-4">
+          <button type="button" id="lightbox-close" class="absolute top-4 end-4 text-white hover:text-gray-300 transition-colors">
+            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <button type="button" id="lightbox-prev" class="absolute start-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors p-2">
+            <svg class="w-8 h-8 rtl:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button type="button" id="lightbox-next" class="absolute end-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors p-2">
+            <svg class="w-8 h-8 rtl:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+          <img id="lightbox-image" src="" alt="" class="max-h-[85vh] max-w-[90vw] object-contain" />
+        </div>
+
+        <!-- Details -->
+        <div>
+          {model.badge && (
+            <span class="inline-block px-3 py-1 bg-accent text-dark text-sm font-semibold rounded-full mb-3">
+              {model.badge}
+            </span>
+          )}
+          <h1 class="text-3xl md:text-4xl font-bold text-dark mb-2">{model.name}</h1>
+          <p class="text-xl text-gray-600 mb-4">{model.hebrewName}</p>
+          <p class="text-lg text-ezgo-600 font-medium mb-6">{model.tagline}</p>
+
+          <!-- Specs -->
+          <div class="grid grid-cols-2 gap-4 mb-6">
+            <div class="bg-surface rounded-lg p-4">
+              <div class="text-sm text-gray-500 mb-1">מושבים</div>
+              <div class="text-xl font-bold text-dark">{model.seats}</div>
+            </div>
+            <div class="bg-surface rounded-lg p-4">
+              <div class="text-sm text-gray-500 mb-1">מערכת הנעה</div>
+              <div class="text-lg font-bold text-dark">{model.powerType}</div>
+            </div>
+          </div>
+
+          <!-- Features -->
+          <div class="mb-8">
+            <h2 class="text-lg font-bold text-dark mb-3">תכונות עיקריות</h2>
+            <ul class="space-y-2">
+              {model.features.map((feature: string) => (
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-ezgo-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                  <span class="text-gray-700">{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="space-y-3">
+            <a
+              href="tel:077-231-2585"
+              class="flex items-center justify-center gap-2 w-full py-4 bg-ezgo-500 text-white font-semibold rounded-md hover:bg-ezgo-600 transition-colors shadow-md"
+            >
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              התקשרו לייעוץ: 077-231-2585
+            </a>
+            <a
+              href="#contact-form"
+              class="flex items-center justify-center gap-2 w-full py-4 bg-white border-2 border-ezgo-500 text-ezgo-600 font-semibold rounded-md hover:bg-ezgo-50 transition-colors"
+            >
+              השאירו פרטים ונחזור אליכם
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Description Section -->
+  <section class="py-12 bg-surface">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-2xl font-bold text-dark mb-6">אודות {model.name}</h2>
+      <div class="prose prose-lg max-w-none text-gray-700">
+        <p>
+          {model.name} הוא אחד מדגמי הדגל של E-Z-GO, המציע שילוב מושלם של ביצועים, נוחות ואמינות.
+          {model.category === 'electric' && 'עם טכנולוגיית ELiTE Lithium המתקדמת, הרכב מספק טווח נסיעה ארוך, טעינה מהירה וביצועים עקביים לאורך כל הנסיעה.'}
+          {model.category === 'gas' && 'מנוע הבנזין EX1 החזק והחסכוני מספק עוצמה יוצאת דופן לכל משימה, עם תחזוקה פשוטה ואמינות לאורך שנים.'}
+          {model.category === 'cargo' && 'הרכב מיועד להסעת נוסעים בנוחות מרבית, ומתאים במיוחד לקיבוצים, מושבים, אתרי נופש ומלונות.'}
+          {model.category === 'industrial' && 'עיצוב תעשייתי עמיד שנבנה לעמוד בתנאי עבודה קשים, עם קיבולת משא גבוהה וגודל קומפקטי למעבר בשטחים צרים.'}
+        </p>
+        <p>
+          E-Z-GO, חלק מקבוצת Textron העולמית, מייצרת רכבים תפעוליים מאז 1954 ונחשבת למותג המוביל בתחום.
+          כל רכב עובר בקרת איכות קפדנית ומגיע עם אחריות יצרן.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section id="contact-form" class="py-12 md:py-16 bg-ezgo-900 text-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-bold mb-4">מעוניינים ב-{model.name}?</h2>
+          <p class="text-xl text-gray-300 mb-6">
+            השאירו פרטים ונחזור אליכם עם ייעוץ מקצועי והצעת מחיר מותאמת אישית.
+          </p>
+          <ul class="space-y-2 text-gray-300">
+            <li class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              ייעוץ מקצועי ללא התחייבות
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              התאמה לצרכים שלכם
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              רשת שירות ארצית
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ContactForm title={`לפרטים על ${model.name}`} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Models -->
+  {relatedModels.length > 0 && (
+    <section class="py-12 md:py-16 bg-surface">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-2xl font-bold text-dark mb-8">דגמים נוספים ב{categoryNames[model.category]}</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          {relatedModels.map((related) => (
+            <a href={`/models/${related.slug}/`} class="group bg-white rounded-xl overflow-hidden border border-border hover:border-ezgo-300 hover:shadow-lg transition-all">
+              <div class="aspect-[4/3] overflow-hidden">
+                <img
+                  src={related.mainImage}
+                  alt={related.hebrewName}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  width="400"
+                  height="300"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-4">
+                <h3 class="font-bold text-dark group-hover:text-ezgo-600 transition-colors">{related.name}</h3>
+                <p class="text-sm text-gray-600">{related.seats} מושבים | {related.powerType}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- FAQ -->
+  <section class="py-12 md:py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4">
+      <FAQ items={faqItems} title={`שאלות נפוצות על ${model.name}`} />
+    </div>
+  </section>
+</BaseLayout>
+
+<!-- Product Schema (NO offers/price!) -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": `E-Z-GO ${model.name}`,
+  "description": `${model.hebrewName} - ${model.tagline}`,
+  "image": model.mainImage,
+  "brand": {
+    "@type": "Brand",
+    "name": "E-Z-GO"
+  },
+  "manufacturer": {
+    "@type": "Organization",
+    "name": "E-Z-GO (Textron Inc.)"
+  },
+  "category": categoryNames[model.category],
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "מספר מושבים",
+      "value": model.seats
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "מערכת הנעה",
+      "value": model.powerType
+    }
+  ]
+})} />
+
+<!-- FAQPage Schema -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer
+    }
+  }))
+})} />
+
+<!-- Gallery Interactivity Script -->
+<script>
+  const mainImage = document.getElementById('main-image') as HTMLImageElement;
+  const mainContainer = document.getElementById('main-image-container');
+  const thumbnails = document.querySelectorAll('.thumbnail-btn');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImage = document.getElementById('lightbox-image') as HTMLImageElement;
+  const lightboxClose = document.getElementById('lightbox-close');
+  const lightboxPrev = document.getElementById('lightbox-prev');
+  const lightboxNext = document.getElementById('lightbox-next');
+
+  let currentIndex = 0;
+  const images: {src: string, alt: string}[] = [];
+
+  // Collect all images
+  thumbnails.forEach((btn, index) => {
+    const src = btn.getAttribute('data-src') || '';
+    const alt = btn.getAttribute('data-alt') || '';
+    images.push({ src, alt });
+
+    // Thumbnail click - change main image
+    btn.addEventListener('click', () => {
+      if (mainImage) {
+        mainImage.src = src;
+        mainImage.alt = alt;
+      }
+      currentIndex = index;
+      // Update active state
+      thumbnails.forEach(t => t.classList.remove('ring-2'));
+      btn.classList.add('ring-2');
+    });
+  });
+
+  // Main image click - open lightbox
+  mainContainer?.addEventListener('click', () => {
+    if (lightbox && lightboxImage && mainImage) {
+      lightboxImage.src = mainImage.src;
+      lightboxImage.alt = mainImage.alt;
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+
+  // Close lightbox
+  function closeLightbox() {
+    if (lightbox) {
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+  }
+
+  lightboxClose?.addEventListener('click', closeLightbox);
+  lightbox?.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  // Navigate lightbox
+  lightboxPrev?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    if (lightboxImage) {
+      lightboxImage.src = images[currentIndex].src;
+      lightboxImage.alt = images[currentIndex].alt;
+    }
+  });
+
+  lightboxNext?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    currentIndex = (currentIndex + 1) % images.length;
+    if (lightboxImage) {
+      lightboxImage.src = images[currentIndex].src;
+      lightboxImage.alt = images[currentIndex].alt;
+    }
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox?.classList.contains('hidden')) {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') lightboxPrev?.click();
+      if (e.key === 'ArrowRight') lightboxNext?.click();
+    }
+  });
+</script>
