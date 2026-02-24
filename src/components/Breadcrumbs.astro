@@ -1,0 +1,58 @@
+---
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+
+// Add home as first item
+const fullItems = [
+  { label: 'דף הבית', href: '/' },
+  ...items,
+];
+
+// Build schema
+const schemaItems = fullItems.map((item, index) => ({
+  "@type": "ListItem",
+  "position": index + 1,
+  "name": item.label,
+  ...(item.href && { "item": `https://ez-go.co.il${item.href}` }),
+}));
+---
+
+<nav aria-label="Breadcrumb" class="text-sm">
+  <ol class="flex flex-wrap items-center gap-1 text-gray-400">
+    {fullItems.map((item, index) => (
+      <>
+        {index > 0 && (
+          <li class="flex items-center">
+            <svg class="w-4 h-4 text-gray-400 rtl:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </li>
+        )}
+        <li>
+          {item.href ? (
+            <a href={item.href} class="hover:text-white transition-colors">
+              {item.label}
+            </a>
+          ) : (
+            <span class="text-gray-300">{item.label}</span>
+          )}
+        </li>
+      </>
+    ))}
+  </ol>
+</nav>
+
+<!-- BreadcrumbList Schema -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": schemaItems
+})} />

@@ -1,0 +1,96 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'הצהרת נגישות' },
+];
+
+const lastUpdated = 'פברואר 2026';
+---
+
+<BaseLayout
+  title="הצהרת נגישות | EZ-GO Israel"
+  description="הצהרת נגישות של אתר EZ-GO Israel בהתאם לחוק שוויון זכויות לאנשים עם מוגבלות."
+>
+  <section class="bg-gradient-to-bl from-ezgo-900 via-ezgo-800 to-dark text-white py-12">
+    <div class="max-w-4xl mx-auto px-4">
+      <Breadcrumbs items={breadcrumbs} />
+      <h1 class="text-3xl md:text-4xl font-bold mt-4">הצהרת נגישות</h1>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="max-w-4xl mx-auto px-4 prose prose-lg max-w-none">
+      <p class="text-gray-600">עודכן לאחרונה: {lastUpdated}</p>
+
+      <h2>מחויבות לנגישות</h2>
+      <p>
+        EZ-GO Israel מחויבת להנגיש את האתר לאנשים עם מוגבלויות בהתאם לחוק שוויון זכויות לאנשים עם מוגבלות, התשנ"ח-1998, ולתקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע"ג-2013.
+      </p>
+
+      <h2>תקן הנגישות</h2>
+      <p>
+        האתר תואם לדרישות תקן WCAG 2.1 ברמה AA של ארגון W3C (World Wide Web Consortium), בהתאם להנחיות משרד המשפטים.
+      </p>
+
+      <h2>התאמות הנגישות באתר</h2>
+      <ul>
+        <li><strong>ניווט מקלדת</strong> - ניתן לנווט באתר באמצעות מקלדת בלבד</li>
+        <li><strong>תאימות קורא מסך</strong> - האתר תואם לתוכנות הקראה</li>
+        <li><strong>טקסט חלופי</strong> - לכל התמונות יש תיאור טקסטואלי</li>
+        <li><strong>ניגודיות צבעים</strong> - ניגודיות מספקת בין טקסט לרקע</li>
+        <li><strong>גופן ברור</strong> - שימוש בגופן קריא בגודל מתאים</li>
+        <li><strong>מבנה סמנטי</strong> - שימוש נכון בכותרות ואלמנטים סמנטיים</li>
+      </ul>
+
+      <h2>תפריט נגישות</h2>
+      <p>
+        בכל עמוד באתר קיים כפתור נגישות (בפינה הימנית התחתונה) המאפשר:
+      </p>
+      <ul>
+        <li>הגדלה והקטנה של הטקסט</li>
+        <li>מעבר לתצוגת גווני אפור</li>
+        <li>הגברת ניגודיות</li>
+        <li>הדגשת קישורים</li>
+        <li>איפוס כל ההגדרות</li>
+      </ul>
+
+      <h2>דפדפנים נתמכים</h2>
+      <p>
+        האתר מותאם לדפדפנים המובילים בגרסאותיהם העדכניות: Chrome, Firefox, Safari, Edge.
+      </p>
+
+      <h2>פניות בנושא נגישות</h2>
+      <p>
+        אם נתקלתם בבעיית נגישות באתר או שיש לכם הצעות לשיפור, נשמח לשמוע מכם:
+      </p>
+      <ul>
+        <li><strong>טלפון:</strong> <a href="tel:077-231-2585">077-231-2585</a></li>
+        <li><strong>אימייל:</strong> <a href="mailto:support@ez-go.co.il">support@ez-go.co.il</a></li>
+      </ul>
+
+      <p>
+        אנו מתחייבים לטפל בכל פנייה בנושא נגישות תוך 5 ימי עסקים.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose h2 {
+    @apply text-xl font-bold text-dark mt-8 mb-4;
+  }
+  .prose p {
+    @apply text-gray-700 mb-4;
+  }
+  .prose ul {
+    @apply list-disc list-inside mb-4 text-gray-700;
+  }
+  .prose li {
+    @apply mb-2;
+  }
+  .prose a {
+    @apply text-ezgo-600 hover:text-ezgo-700;
+  }
+</style>

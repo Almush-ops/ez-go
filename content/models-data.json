@@ -1,0 +1,334 @@
+{
+  "models": [
+    {
+      "slug": "rxv-2",
+      "name": "RXV 2",
+      "hebrewName": "RXV 2 - רכב גולף 2 מושבים",
+      "category": "electric",
+      "seats": 2,
+      "powerType": "ELiTE Lithium / 48V",
+      "tagline": "Drive More than the Game",
+      "features": [
+        "IntelliBrake - בלם חניה אוטומטי",
+        "תא מטען גדול וסל ציוד",
+        "מסך מגע ECOXGEAR 10 אינץ'",
+        "טעינה מהירה וכוח עקבי מסוללות ליתיום",
+        "אביזרי גולף ייעודיים"
+      ],
+      "images": [
+        "https://ezgo.txtsv.com/sites/default/files/2024-11/Valor2_Cruiser_Platinum_v31_960x720.png",
+        "https://ezgo.txtsv.com/sites/default/files/2025-05/_0001_Textron_EZGO_MY25_Spring-9757.jpg",
+        "https://ezgo.txtsv.com/sites/default/files/2025-05/Valor2_Connect_Black_v31_960x720_0.png",
+        "https://ezgo.txtsv.com/sites/default/files/2025-05/EZGO_CON_2025_RXV2_CC_0175_840x472.jpg"
+      ],
+      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2025-05/EZGO_GOF_2025_RXV2_CC_9767_706x706.jpg"
+    },
+    {
+      "slug": "rxv-4",
+      "name": "RXV 4",
+      "hebrewName": "RXV 4 - רכב גולף 4 מושבים",
+      "category": "electric",
+      "seats": 4,
+      "powerType": "ELiTE Lithium / 48V / EX1 Gas",
+      "tagline": "Drive With Exceptional Performance",
+      "features": [
+        "IntelliBrake - בלם חניה אוטומטי",
+        "עיצוב אלגנטי עם אחסון מרבי",
+        "מושבים בסגנון רכב עם משענות יד מתקפלות",
+        "פנסי LED קדמיים ואחוריים",
+        "מסך מגע ECOXGEAR 10 אינץ' עם Bluetooth",
+        "אפשרויות מושבי יוקרה"
+      ],
+      "images": [
+        "https://ezgo.txtsv.com/sites/default/files/2025-07/RXV4_SummitXTL_MatteGreen_v34_960x720.png",
+        "https://ezgo.txtsv.com/sites/default/files/2025-05/_0003_EZGO_CON_2025_RXV4_CC_3776.jpg",
+        "https://ezgo.txtsv.com/sites/default/files/2025-05/EZGO_CON_2025_RXV4_CC_2082_840x472.jpg",
+        "https://ezgo.txtsv.com/sites/default/files/2025-05/EZGO_CON_2025_RXV4_CC_3895_840x472.jpg"
+      ],
+      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2025-05/EZGO_CON_2025_RXV4_CC_3781_706x706.jpg"
+    },
+    {
+      "slug": "liberty",
+      "name": "Liberty",
+      "hebrewName": "Liberty - רכב חשמלי לנסיעה ברחוב",
+      "category": "electric",
+      "seats": 4,
+      "powerType": "ELiTE Lithium",
+      "tagline": "Take on More Roads",
+      "badge": "Street Legal",
+      "features": [
+        "ארבעה מושבים פונים קדימה",
+        "פנסי LED משולבים",
+        "איכות נסיעה משופרת",
+        "אפשרויות נסיעה ברחוב (LSV)",
+        "סוללות ליתיום ללא תחזוקה",
+        "טכנולוגיית טעינה מהירה"
+      ],
+      "images": [
+        "https://ezgo.txtsv.com/sites/default/files/2025-11/Liberty_SummitXTL_PatriotBlue_v13_960x720.png",
+        "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_LibertyLSV_CC_8762%20%281%29.jpg",
+        "https://ezgo.txtsv.com/sites/default/files/2026-01/Liberty_SummitX_Slate_v13_960x720.png",
+        "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_LibertyLSV_CC_8499.jpg"
+      ],
+      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_LibertyLSV_CC_9747.jpg"
+    },
+    {
+      "slug": "express-4-elite",
+      "name": "Express 4 ELiTE",
+      "hebrewName": "Express 4 ELiTE - רכב חשמלי 4 מושבים",
+      "category": "electric",
+      "seats": 4,
+      "powerType": "ELiTE Lithium / 48V",
+      "tagline": "Built for High Performance",
+      "features": [
+        "מושלם לגולף או קהילת גמלאים",
+        "שימוש בשכונה או קהילה",
+        "פנסי LED נשלטים",
+        "אפשרויות גובה רכב מורם או סטנדרטי",
+        "אפשרויות מושבים פרימיום",
+        "מסך מגע ECOXGEAR וסאונד בר"
+      ],
+      "images": [
+        "https://ezgo.txtsv.com/sites/default/files/2025-11/Express4_SummitXTL_Black_v25_960x720.png",
+        "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express4_CC_2470.jpg",
+        "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express4_CC_7810.jpg",
+        "https://ezgo.txtsv.com/sites/default/files/2025-12/EZGO_CON_2025_Express4_CC_7792.jpg"
+      ],
+      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express4_CC_2045.jpg"
+    },
+    {
+      "slug": "express-6-elite",
+      "name": "Express 6 ELiTE",
+      "hebrewName": "Express 6 ELiTE - רכב חשמלי 6 מושבים",
+      "category": "electric",
+      "seats": 6,
+      "powerType": "ELiTE Lithium / 48V",
+      "tagline": "Designed for Comfort, Built for Performance",
+      "badge": "6 Passengers",
+      "features": [
+        "מרווח רגליים מורחב",
+        "מתלה קדמי משופר אופציונלי",
+        "פנסי LED",
+        "מצלמה אחורית בחבילות נבחרות",
+        "בלם חניה אוטומטי",
+        "אפשרויות פנים פרימיום"
+      ],
+      "images": [
+        "https://ezgo.txtsv.com/sites/default/files/2025-12/Express6_SummitXTL_White_v25_960x720.png",
+        "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express6_CC_0807.jpg",
+        "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express6_CC_7756.jpg",
+        "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express6_CC_7816.jpg"
+      ],
+      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express6_CC_8613.jpg"
+    },
+    {
+      "slug": "rxv-2-gas",
+      "name": "RXV 2 EX1 Gas",
+      "hebrewName": "RXV 2 בנזין - רכב גולף 2 מושבים",
+      "category": "gas",
+      "seats": 2,
+      "powerType": "EX1 Gas Engine",
+      "tagline": "Power When You Need It",
+      "features": [
+        "מנוע בנזין EX1 חזק וחסכוני",
+        "IntelliBrake - בלם חניה אוטומטי",
+        "תא מטען גדול",
+        "מסך מגע ECOXGEAR אופציונלי",
+        "אידיאלי לשטחים גדולים",
+        "תחזוקה פשוטה"
+      ],
+      "images": [
+        "https://ezgo.txtsv.com/sites/default/files/2025-05/FreedomRXV_CON_2Pass_PatriotBlue_v28_960x720.png",
+        "https://ezgo.txtsv.com/sites/default/files/2025-05/Valor2_Cruiser_White_v31_960x720.png"
+      ],
+      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2025-05/FreedomRXV_CON_2Pass_PatriotBlue_v28_960x720.png"
+    },
+    {
+      "slug": "rxv-4-gas",
+      "name": "RXV 4 EX1 Gas",
+      "hebrewName": "RXV 4 בנזין - רכב גולף 4 מושבים",
+      "category": "gas",
+      "seats": 4,
+      "powerType": "EX1 Gas Engine",
+      "tagline": "Drive With Exceptional Performance",
+      "features": [
+        "מנוע בנזין EX1 חזק",
+        "ארבעה מושבים נוחים",
+        "IntelliBrake - בלם חניה אוטומטי",
+        "עיצוב אלגנטי עם אחסון מרבי",
+        "פנסי LED קדמיים ואחוריים",
+        "מסך מגע ECOXGEAR אופציונלי"
+      ],
+      "images": [
+        "https://ezgo.txtsv.com/sites/default/files/2025-05/FreedomRXV_CON_4Pass_OceanGrey_v28_960x720_0.png",
+        "https://ezgo.txtsv.com/sites/default/files/2025-05/Valor4_Cruiser_Black_v31_960x720.png"
+      ],
+      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2025-05/FreedomRXV_CON_4Pass_OceanGrey_v28_960x720_0.png"
+    },
+    {
+      "slug": "express-4-gas",
+      "name": "Express 4 Gas",
+      "hebrewName": "Express 4 בנזין - רכב גולף 4 מושבים",
+      "category": "gas",
+      "seats": 4,
+      "powerType": "13.5 HP Gas Engine",
+      "tagline": "Built for High Performance",
+      "features": [
+        "מנוע בנזין 13.5 כ\"ס",
+        "מושלם לגולף או קהילת גמלאים",
+        "פנסי LED נשלטים",
+        "אפשרויות גובה רכב מורם",
+        "אפשרויות מושבים פרימיום",
+        "מסך מגע וסאונד בר אופציונלי"
+      ],
+      "images": [
+        "https://ezgo.txtsv.com/sites/default/files/2026-01/Express4_TouringS_Platinum_v25_960x720.png",
+        "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express4_CC_2470.jpg"
+      ],
+      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2026-01/Express4_TouringS_Platinum_v25_960x720.png"
+    },
+    {
+      "slug": "express-6-gas",
+      "name": "Express 6 Gas",
+      "hebrewName": "Express 6 בנזין - רכב משא 6 מושבים",
+      "category": "cargo",
+      "seats": 6,
+      "powerType": "13.5 HP Gas Engine",
+      "tagline": "Designed for Comfort, Built for Performance",
+      "badge": "6 Passengers",
+      "features": [
+        "מנוע בנזין 13.5 כ\"ס חזק",
+        "שישה מושבים נוחים",
+        "מרווח רגליים מורחב",
+        "פנסי LED",
+        "בלם חניה אוטומטי",
+        "אידיאלי להסעת קבוצות"
+      ],
+      "images": [
+        "https://ezgo.txtsv.com/sites/default/files/2026-01/Express6_TouringS_MetallicCharcoal_v25_960x720.png",
+        "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express6_CC_7816.jpg"
+      ],
+      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2026-01/Express6_TouringS_MetallicCharcoal_v25_960x720.png"
+    },
+    {
+      "slug": "valor-6",
+      "name": "Valor 6",
+      "hebrewName": "Valor 6 - רכב משא 6 מושבים",
+      "category": "cargo",
+      "seats": 6,
+      "powerType": "ELiTE Lithium / Gas",
+      "tagline": "Value Meets Versatility",
+      "badge": "6 Passengers",
+      "features": [
+        "שישה מושבים נוחים",
+        "עיצוב פרקטי לקהילות",
+        "אפשרות חשמל או בנזין",
+        "פנסי LED סטנדרטיים",
+        "תא מטען רחב",
+        "יחס ערך-מחיר מצוין"
+      ],
+      "images": [
+        "https://ezgo.txtsv.com/sites/default/files/2025-12/Valor6_S_Connect_Platinum_v25_960x720.png",
+        "https://ezgo.txtsv.com/sites/default/files/2025-12/Valor6_S%2B_Connect_Platinum_v25_960x720.png"
+      ],
+      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2025-12/Valor6_S_Connect_Platinum_v25_960x720.png"
+    },
+    {
+      "slug": "cushman-hauler-pro",
+      "name": "Cushman Hauler PRO",
+      "hebrewName": "Cushman Hauler PRO - רכב תעשייתי",
+      "category": "industrial",
+      "seats": 2,
+      "powerType": "ELiTE Electric",
+      "tagline": "Built to Work",
+      "badge": "Industrial",
+      "features": [
+        "עיצוב עמיד לעבודה קשה",
+        "מערכת הנעה חשמלית בעלת ביצועים גבוהים",
+        "גודל קומפקטי למעבר בשטחים צרים",
+        "קיבולת משא רב-תכליתית",
+        "אידיאלי למפעלים ומתקנים",
+        "מותג Cushman מבית Textron"
+      ],
+      "images": [
+        "https://ezgo.txtsv.com/sites/default/files/2024-01/CUS_GOF_HaulerPRO_ELiTE_2022_04543.jpg"
+      ],
+      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2024-01/CUS_GOF_HaulerPRO_ELiTE_2022_04543.jpg"
+    },
+    {
+      "slug": "hauler-800",
+      "name": "Hauler 800",
+      "hebrewName": "Hauler 800 - רכב משא תעשייתי",
+      "category": "industrial",
+      "seats": 2,
+      "powerType": "Electric / Gas",
+      "tagline": "Heavy Duty Performance",
+      "badge": "Industrial",
+      "features": [
+        "קיבולת משא 800 ליברות",
+        "ארגז מטען רחב",
+        "עיצוב תעשייתי עמיד",
+        "אפשרות חשמל או בנזין",
+        "אידיאלי לקיבוצים ומושבים",
+        "תחזוקה פשוטה ועלות תפעול נמוכה"
+      ],
+      "images": [
+        "https://ezgo.txtsv.com/sites/default/files/2024-01/CUS_GOF_HaulerPRO_ELiTE_2022_04543.jpg"
+      ],
+      "mainImage": "https://ezgo.txtsv.com/sites/default/files/2024-01/CUS_GOF_HaulerPRO_ELiTE_2022_04543.jpg"
+    }
+  ],
+  "categories": {
+    "electric": {
+      "name": "רכבים חשמליים",
+      "slug": "electric",
+      "description": "רכבי E-Z-GO חשמליים עם טכנולוגיית ELiTE Lithium המתקדמת - סוללות ליתיום ללא תחזוקה, טעינה מהירה וביצועים עקביים.",
+      "heroImage": "https://ezgo.txtsv.com/sites/default/files/2025-05/_0001_Textron_EZGO_MY25_Spring-9757.jpg"
+    },
+    "gas": {
+      "name": "רכבי בנזין",
+      "slug": "gas",
+      "description": "רכבי E-Z-GO עם מנועי בנזין EX1 חזקים וחסכוניים - אידיאליים לשטחים גדולים ולשימוש אינטנסיבי.",
+      "heroImage": "https://ezgo.txtsv.com/sites/default/files/2025-05/FreedomRXV_CON_4Pass_OceanGrey_v28_960x720_0.png"
+    },
+    "cargo": {
+      "name": "רכבי משא",
+      "slug": "cargo",
+      "description": "רכבי E-Z-GO להסעת נוסעים ומשא - 6 מושבים לקהילות, קיבוצים ואתרי נופש.",
+      "heroImage": "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express6_CC_0807.jpg"
+    },
+    "industrial": {
+      "name": "רכבים לתעשייה",
+      "slug": "industrial",
+      "description": "רכבי Cushman ו-E-Z-GO לשימוש תעשייתי - עמידים, חזקים ומותאמים לעבודה במפעלים ומתקנים.",
+      "heroImage": "https://ezgo.txtsv.com/sites/default/files/2024-01/CUS_GOF_HaulerPRO_ELiTE_2022_04543.jpg"
+    }
+  },
+  "atmosphereImages": [
+    {
+      "url": "https://ezgo.txtsv.com/sites/default/files/2025-05/_0000_Textron_EZGO_MY25_Spring-0689%20%281%29.jpg",
+      "description": "Golf course lifestyle",
+      "usage": "hero"
+    },
+    {
+      "url": "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_LibertyLSV_CC_3604.jpg",
+      "description": "Liberty in residential area",
+      "usage": "about"
+    },
+    {
+      "url": "https://ezgo.txtsv.com/sites/default/files/2025-12/EZGO_CON_2025_Group_CC_7897.jpg",
+      "description": "Multiple vehicles group shot",
+      "usage": "category"
+    },
+    {
+      "url": "https://ezgo.txtsv.com/sites/default/files/2025-05/EZGO_CON_FreedomRXV_PACE_2023_CC_0366_840x472.jpg",
+      "description": "RXV on golf course",
+      "usage": "electric"
+    },
+    {
+      "url": "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express6_CC_8613%20%282%29.jpg",
+      "description": "Express 6 outdoor",
+      "usage": "cargo"
+    }
+  ]
+}

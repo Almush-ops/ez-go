@@ -1,0 +1,135 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'מדיניות פרטיות' },
+];
+
+const lastUpdated = 'פברואר 2026';
+---
+
+<BaseLayout
+  title="מדיניות פרטיות | EZ-GO Israel"
+  description="מדיניות הפרטיות של אתר EZ-GO Israel - מידע על איסוף, שימוש ואבטחת מידע אישי."
+>
+  <section class="bg-gradient-to-bl from-ezgo-900 via-ezgo-800 to-dark text-white py-12">
+    <div class="max-w-4xl mx-auto px-4">
+      <Breadcrumbs items={breadcrumbs} />
+      <h1 class="text-3xl md:text-4xl font-bold mt-4">מדיניות פרטיות</h1>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="max-w-4xl mx-auto px-4 prose prose-lg max-w-none">
+      <p class="text-gray-600">עודכן לאחרונה: {lastUpdated}</p>
+
+      <h2>כללי</h2>
+      <p>
+        EZ-GO Israel ("האתר", "אנחנו") מכבדת את פרטיות המשתמשים באתר ez-go.co.il.
+        מדיניות פרטיות זו מסבירה כיצד אנו אוספים, משתמשים ומגנים על המידע האישי שלכם.
+      </p>
+
+      <h2>מידע שאנו אוספים</h2>
+      <h3>מידע שאתם מספקים</h3>
+      <p>
+        כאשר אתם ממלאים טופס יצירת קשר באתר, אנו אוספים:
+      </p>
+      <ul>
+        <li>שם מלא</li>
+        <li>מספר טלפון</li>
+        <li>אזור מגורים (צפון/מרכז/דרום)</li>
+      </ul>
+
+      <h3>מידע שנאסף אוטומטית</h3>
+      <p>
+        האתר משתמש בכלי אנליטיקה לניתוח תנועת גולשים. מידע זה כולל:
+      </p>
+      <ul>
+        <li>כתובת IP (מוסתרת חלקית)</li>
+        <li>סוג הדפדפן והמכשיר</li>
+        <li>עמודים שנצפו ומשך השהייה</li>
+        <li>מקור ההגעה לאתר</li>
+      </ul>
+
+      <h2>שימוש במידע</h2>
+      <p>
+        אנו משתמשים במידע שנאסף למטרות הבאות בלבד:
+      </p>
+      <ul>
+        <li>יצירת קשר עמכם בעקבות פנייתכם</li>
+        <li>שיפור חוויית הגלישה באתר</li>
+        <li>ניתוח סטטיסטי של שימוש באתר</li>
+      </ul>
+
+      <h2>שיתוף מידע</h2>
+      <p>
+        אנו לא מוכרים, משכירים או משתפים את המידע האישי שלכם עם צדדים שלישיים,
+        למעט במקרים הבאים:
+      </p>
+      <ul>
+        <li>קבלת הסכמה מפורשת מכם</li>
+        <li>דרישה חוקית או צו בית משפט</li>
+        <li>שיתוף עם ספקי שירות הפועלים מטעמנו (למשל, מערכת ניהול לידים)</li>
+      </ul>
+
+      <h2>עוגיות (Cookies)</h2>
+      <p>
+        האתר עשוי להשתמש בעוגיות לשיפור חוויית הגלישה.
+        ניתן לשלוט בהגדרות העוגיות דרך הדפדפן שלכם.
+      </p>
+
+      <h2>אבטחת מידע</h2>
+      <p>
+        אנו נוקטים באמצעי אבטחה סבירים להגנה על המידע האישי שלכם,
+        כולל שימוש בפרוטוקול HTTPS מאובטח.
+      </p>
+
+      <h2>זכויות המשתמש</h2>
+      <p>
+        בהתאם לחוק הגנת הפרטיות, התשמ"א-1981, עומדות לכם הזכויות הבאות:
+      </p>
+      <ul>
+        <li>לעיין במידע השמור אודותיכם</li>
+        <li>לבקש תיקון מידע שגוי</li>
+        <li>לבקש מחיקת המידע האישי שלכם</li>
+      </ul>
+
+      <h2>שינויים במדיניות</h2>
+      <p>
+        אנו שומרים לעצמנו את הזכות לעדכן מדיניות זו מעת לעת.
+        שינויים מהותיים יפורסמו בעמוד זה.
+      </p>
+
+      <h2>יצירת קשר</h2>
+      <p>
+        לשאלות בנושא מדיניות הפרטיות ניתן לפנות אלינו:
+      </p>
+      <ul>
+        <li><strong>טלפון:</strong> <a href="tel:077-231-2585">077-231-2585</a></li>
+        <li><strong>אימייל:</strong> <a href="mailto:support@ez-go.co.il">support@ez-go.co.il</a></li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose h2 {
+    @apply text-xl font-bold text-dark mt-8 mb-4;
+  }
+  .prose h3 {
+    @apply text-lg font-semibold text-dark mt-6 mb-3;
+  }
+  .prose p {
+    @apply text-gray-700 mb-4;
+  }
+  .prose ul {
+    @apply list-disc list-inside mb-4 text-gray-700;
+  }
+  .prose li {
+    @apply mb-2;
+  }
+  .prose a {
+    @apply text-ezgo-600 hover:text-ezgo-700;
+  }
+</style>

@@ -1,0 +1,174 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import ContactForm from '@/components/ContactForm.astro';
+import FAQ from '@/components/FAQ.astro';
+
+const breadcrumbs = [
+  { label: 'שירות ותמיכה' },
+];
+
+const faqItems = [
+  {
+    question: 'מה כולל שירות תקופתי לרכב E-Z-GO?',
+    answer: 'שירות תקופתי כולל בדיקת מצברים/סוללות, בדיקת בלמים, בדיקת צמיגים, שמנים ונוזלים (לדגמי בנזין), בדיקת מערכת ההנעה, ובדיקת חיבורי חשמל. התדירות המומלצת היא אחת לשנה או כל 1,000 ק"מ.',
+  },
+  {
+    question: 'כמה עולה שירות תקופתי?',
+    answer: 'עלות השירות משתנה בהתאם לדגם ולסוג התחזוקה הנדרש. צרו קשר עם אחד ממרכזי השירות שלנו לקבלת הצעת מחיר מדויקת.',
+  },
+  {
+    question: 'האם יש אחריות על חלקי חילוף?',
+    answer: 'כן, חלקי חילוף מקוריים של E-Z-GO מגיעים עם אחריות יצרן. אורך האחריות משתנה בהתאם לסוג החלק. מומלץ להשתמש רק בחלקים מקוריים לשמירה על ביצועי הרכב.',
+  },
+  {
+    question: 'האם אתם מספקים שירות בבית הלקוח?',
+    answer: 'חלק ממרכזי השירות שלנו מציעים שירות ניידות הכולל הגעה ללקוח. צרו קשר עם המרכז הקרוב אליכם לבדיקת זמינות השירות באזורכם.',
+  },
+];
+---
+
+<BaseLayout
+  title="שירות ותמיכה E-Z-GO | EZ-GO Israel"
+  description="שירות ותמיכה לרכבי E-Z-GO בישראל. 14 מרכזי שירות ברחבי הארץ. תחזוקה מקצועית, חלקי חילוף מקוריים ותמיכה טכנית."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-bl from-ezgo-900 via-ezgo-800 to-dark text-white py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <Breadcrumbs items={breadcrumbs} />
+      <div class="max-w-3xl mt-6">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">שירות ותמיכה</h1>
+        <p class="text-xl text-gray-300">
+          רשת שירות ארצית עם 14 מרכזים מורשים לטיפול ותחזוקה של רכבי E-Z-GO.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section class="py-12 md:py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-8 text-center">השירותים שלנו</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-surface rounded-xl p-6">
+          <div class="w-14 h-14 bg-ezgo-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-7 h-7 text-ezgo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-dark mb-2">תחזוקה שוטפת</h3>
+          <p class="text-gray-600">טיפולים תקופתיים לשמירה על ביצועי הרכב ומניעת תקלות עתידיות.</p>
+        </div>
+        <div class="bg-surface rounded-xl p-6">
+          <div class="w-14 h-14 bg-ezgo-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-7 h-7 text-ezgo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-dark mb-2">חלקי חילוף</h3>
+          <p class="text-gray-600">חלקי חילוף מקוריים של E-Z-GO לשמירה על האיכות והאחריות.</p>
+        </div>
+        <div class="bg-surface rounded-xl p-6">
+          <div class="w-14 h-14 bg-ezgo-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-7 h-7 text-ezgo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-dark mb-2">תיקון תקלות</h3>
+          <p class="text-gray-600">אבחון ותיקון תקלות על ידי טכנאים מקצועיים ומנוסים.</p>
+        </div>
+        <div class="bg-surface rounded-xl p-6">
+          <div class="w-14 h-14 bg-ezgo-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-7 h-7 text-ezgo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-dark mb-2">סוללות ומצברים</h3>
+          <p class="text-gray-600">החלפה ושדרוג של סוללות ליתיום ומצברים.</p>
+        </div>
+        <div class="bg-surface rounded-xl p-6">
+          <div class="w-14 h-14 bg-ezgo-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-7 h-7 text-ezgo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-dark mb-2">תמיכה טכנית</h3>
+          <p class="text-gray-600">ייעוץ טלפוני ותמיכה בשאלות טכניות ותפעוליות.</p>
+        </div>
+        <div class="bg-surface rounded-xl p-6">
+          <div class="w-14 h-14 bg-ezgo-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-7 h-7 text-ezgo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-dark mb-2">שדרוגים ואביזרים</h3>
+          <p class="text-gray-600">התקנת אביזרים ושדרוגים לשיפור ביצועים ונוחות.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Centers CTA -->
+  <section class="py-12 md:py-16 bg-surface">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <div class="w-20 h-20 bg-ezgo-100 rounded-full flex items-center justify-center mx-auto mb-6">
+        <svg class="w-10 h-10 text-ezgo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+      </div>
+      <h2 class="text-3xl font-bold text-dark mb-4">14 מרכזי שירות ברחבי הארץ</h2>
+      <p class="text-xl text-gray-600 mb-8">
+        מצאו את מרכז השירות הקרוב אליכם - בצפון, במרכז ובדרום.
+      </p>
+      <a
+        href="/service/service-centers/"
+        class="inline-flex items-center gap-2 px-8 py-4 bg-ezgo-500 text-white font-semibold rounded-md hover:bg-ezgo-600 transition-colors shadow-md hover:shadow-lg"
+      >
+        מצאו מרכז שירות
+        <svg class="w-5 h-5 rtl:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA + Form -->
+  <section class="py-12 md:py-16 bg-ezgo-900 text-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-bold mb-4">צריכים שירות?</h2>
+          <p class="text-xl text-gray-300 mb-6">
+            השאירו פרטים ונחזור אליכם לתיאום שירות או לייעוץ טכני.
+          </p>
+          <div class="space-y-4 text-gray-300">
+            <div class="flex items-center gap-3">
+              <svg class="w-6 h-6 text-ezgo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              <a href="tel:077-231-2585" class="hover:text-white transition-colors">077-231-2585</a>
+            </div>
+            <div class="flex items-center gap-3">
+              <svg class="w-6 h-6 text-ezgo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <a href="mailto:support@ez-go.co.il" class="hover:text-white transition-colors">support@ez-go.co.il</a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <ContactForm title="לתיאום שירות" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-12 md:py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4">
+      <FAQ items={faqItems} title="שאלות נפוצות על שירות ותחזוקה" />
+    </div>
+  </section>
+</BaseLayout>

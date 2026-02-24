@@ -1,0 +1,267 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import ProductCard from '@/components/ProductCard.astro';
+import ContactForm from '@/components/ContactForm.astro';
+import FAQ from '@/components/FAQ.astro';
+
+const breadcrumbs = [
+  { label: 'רכבים חשמליים' },
+];
+
+const models = [
+  {
+    slug: 'rxv-2',
+    name: 'RXV 2',
+    hebrewName: 'RXV 2 - רכב גולף 2 מושבים',
+    seats: 2,
+    powerType: 'ELiTE Lithium / 48V',
+    mainImage: 'https://ezgo.txtsv.com/sites/default/files/2025-05/EZGO_GOF_2025_RXV2_CC_9767_706x706.jpg',
+  },
+  {
+    slug: 'rxv-4',
+    name: 'RXV 4',
+    hebrewName: 'RXV 4 - רכב גולף 4 מושבים',
+    seats: 4,
+    powerType: 'ELiTE Lithium / 48V / EX1 Gas',
+    mainImage: 'https://ezgo.txtsv.com/sites/default/files/2025-05/EZGO_CON_2025_RXV4_CC_3781_706x706.jpg',
+  },
+  {
+    slug: 'liberty',
+    name: 'Liberty',
+    hebrewName: 'Liberty - רכב חשמלי לנסיעה ברחוב',
+    seats: 4,
+    powerType: 'ELiTE Lithium',
+    badge: 'Street Legal',
+    mainImage: 'https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_LibertyLSV_CC_9747.jpg',
+  },
+  {
+    slug: 'express-4-elite',
+    name: 'Express 4 ELiTE',
+    hebrewName: 'Express 4 ELiTE - רכב חשמלי 4 מושבים',
+    seats: 4,
+    powerType: 'ELiTE Lithium / 48V',
+    mainImage: 'https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express4_CC_2045.jpg',
+  },
+  {
+    slug: 'express-6-elite',
+    name: 'Express 6 ELiTE',
+    hebrewName: 'Express 6 ELiTE - רכב חשמלי 6 מושבים',
+    seats: 6,
+    powerType: 'ELiTE Lithium / 48V',
+    badge: '6 מושבים',
+    mainImage: 'https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express6_CC_8613.jpg',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'מה ההבדל בין סוללות ליתיום לסוללות עופרת-חומצה?',
+    answer: 'סוללות ליתיום ELiTE של E-Z-GO מספקות טווח ארוך יותר, טעינה מהירה יותר, משקל נמוך יותר וללא צורך בתחזוקה. הן שומרות על ביצועים עקביים לאורך כל הטעינה, בעוד סוללות עופרת-חומצה מאבדות כוח ככל שהן מתרוקנות.',
+  },
+  {
+    question: 'כמה זמן לוקח לטעון רכב חשמלי E-Z-GO?',
+    answer: 'רכבי E-Z-GO עם סוללות ELiTE Lithium נטענים במהירות - בדרך כלל 3-5 שעות לטעינה מלאה. ניתן גם לבצע טעינות חלקיות ללא פגיעה בסוללה (ללא אפקט זיכרון).',
+  },
+  {
+    question: 'האם אפשר לנסוע עם רכב E-Z-GO חשמלי בכבישים?',
+    answer: 'דגם Liberty הוא Street Legal (LSV) ומאושר לנסיעה בכבישים עם מהירות מוגבלת עד 40 קמ"ש. שאר הדגמים מיועדים לשימוש פרטי בשטחים סגורים כמו קיבוצים, אתרי נופש ומגרשי גולף.',
+  },
+  {
+    question: 'מה טווח הנסיעה של רכב E-Z-GO חשמלי?',
+    answer: 'טווח הנסיעה תלוי בדגם, בתנאי השטח ובמשקל. בממוצע, רכבי E-Z-GO עם סוללות ליתיום יכולים לעבור 50-80 ק"מ בטעינה בודדת בתנאים רגילים.',
+  },
+];
+---
+
+<BaseLayout
+  title="רכבי E-Z-GO חשמליים - ליתיום ו-48V | EZ-GO Israel"
+  description="רכבי E-Z-GO חשמליים עם טכנולוגיית ELiTE Lithium המתקדמת. סוללות ליתיום ללא תחזוקה, טעינה מהירה וביצועים מעולים. צרו קשר לייעוץ מקצועי."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-bl from-ezgo-900 via-ezgo-800 to-dark text-white py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <Breadcrumbs items={breadcrumbs} />
+      <div class="max-w-3xl mt-6">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">רכבי E-Z-GO חשמליים</h1>
+        <p class="text-xl text-gray-300">
+          טכנולוגיית ELiTE Lithium המתקדמת - סוללות ליתיום ללא תחזוקה, טעינה מהירה וביצועים עקביים לאורך כל הנסיעה.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="text-center p-4">
+          <div class="w-12 h-12 bg-ezgo-100 rounded-full flex items-center justify-center mx-auto mb-3">
+            <svg class="w-6 h-6 text-ezgo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-dark">טעינה מהירה</h3>
+          <p class="text-sm text-gray-600 mt-1">3-5 שעות לטעינה מלאה</p>
+        </div>
+        <div class="text-center p-4">
+          <div class="w-12 h-12 bg-ezgo-100 rounded-full flex items-center justify-center mx-auto mb-3">
+            <svg class="w-6 h-6 text-ezgo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-dark">ללא תחזוקה</h3>
+          <p class="text-sm text-gray-600 mt-1">סוללות ליתיום Sealed</p>
+        </div>
+        <div class="text-center p-4">
+          <div class="w-12 h-12 bg-ezgo-100 rounded-full flex items-center justify-center mx-auto mb-3">
+            <svg class="w-6 h-6 text-ezgo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-dark">ביצועים עקביים</h3>
+          <p class="text-sm text-gray-600 mt-1">כוח מלא עד הסוף</p>
+        </div>
+        <div class="text-center p-4">
+          <div class="w-12 h-12 bg-ezgo-100 rounded-full flex items-center justify-center mx-auto mb-3">
+            <svg class="w-6 h-6 text-ezgo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-dark">שקט ונקי</h3>
+          <p class="text-sm text-gray-600 mt-1">אפס פליטות ורעש</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Models Grid -->
+  <section class="py-12 md:py-16 bg-surface">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-8">דגמי E-Z-GO חשמליים</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {models.map((model) => (
+          <ProductCard
+            name={model.name}
+            hebrewName={model.hebrewName}
+            seats={model.seats}
+            powerType={model.powerType}
+            image={model.mainImage}
+            href={`/models/${model.slug}/`}
+            badge={model.badge}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Section -->
+  <section class="py-12 md:py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-bold text-dark mb-4">טכנולוגיית ELiTE Lithium</h2>
+          <p class="text-gray-600 mb-6">
+            E-Z-GO פיתחה את טכנולוגיית ELiTE Lithium בשיתוף עם Samsung SDI, יצרנית הסוללות המובילה בעולם.
+            התוצאה היא מערכת הנעה חשמלית מתקדמת שמספקת ביצועים יוצאי דופן.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-ezgo-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700">סוללות Samsung SDI - אמינות מוכחת</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-ezgo-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700">מערכת AC Drive - יעילות גבוהה</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-ezgo-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700">IntelliBrake - בלם חניה אוטומטי</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-ezgo-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700">אחריות מורחבת על הסוללות</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <img
+            src="https://ezgo.txtsv.com/sites/default/files/2025-05/_0001_Textron_EZGO_MY25_Spring-9757.jpg"
+            alt="רכב E-Z-GO חשמלי בפעולה"
+            class="rounded-xl shadow-lg"
+            width="600"
+            height="400"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA + Form -->
+  <section class="py-12 md:py-16 bg-ezgo-900 text-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-bold mb-4">מעוניינים ברכב E-Z-GO חשמלי?</h2>
+          <p class="text-xl text-gray-300 mb-6">
+            השאירו פרטים ונחזור אליכם עם ייעוץ מקצועי והצעת מחיר מותאמת אישית.
+          </p>
+          <ul class="space-y-2 text-gray-300">
+            <li class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              ייעוץ מקצועי ללא התחייבות
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              התאמה לצרכים הספציפיים שלכם
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              רשת שירות ארצית
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ContactForm title="לפרטים נוספים על הדגמים החשמליים" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-12 md:py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4">
+      <FAQ items={faqItems} title="שאלות נפוצות על רכבי E-Z-GO חשמליים" />
+    </div>
+  </section>
+</BaseLayout>
+
+<!-- ItemList Schema -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "רכבי E-Z-GO חשמליים",
+  "description": "רכבי E-Z-GO חשמליים עם טכנולוגיית ELiTE Lithium",
+  "numberOfItems": models.length,
+  "itemListElement": models.map((model, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": model.hebrewName,
+    "url": `https://ez-go.co.il/models/${model.slug}/`
+  }))
+})} />

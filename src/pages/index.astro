@@ -1,0 +1,336 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ProductCard from '@/components/ProductCard.astro';
+import FAQ from '@/components/FAQ.astro';
+import ContactForm from '@/components/ContactForm.astro';
+
+// Featured models data
+const featuredModels = [
+  {
+    title: 'RXV 2',
+    slug: 'rxv-2',
+    category: 'electric' as const,
+    seats: 2,
+    image: 'https://ezgo.txtsv.com/sites/default/files/2025-05/EZGO_GOF_2025_RXV2_CC_9767_706x706.jpg',
+  },
+  {
+    title: 'RXV 4',
+    slug: 'rxv-4',
+    category: 'electric' as const,
+    seats: 4,
+    image: 'https://ezgo.txtsv.com/sites/default/files/2025-05/EZGO_CON_2025_RXV4_CC_3781_706x706.jpg',
+  },
+  {
+    title: 'Liberty',
+    slug: 'liberty',
+    category: 'electric' as const,
+    seats: 4,
+    badge: 'Street Legal',
+    image: 'https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_LibertyLSV_CC_9747.jpg',
+  },
+  {
+    title: 'Express 6 ELiTE',
+    slug: 'express-6-elite',
+    category: 'electric' as const,
+    seats: 6,
+    badge: '6 מושבים',
+    image: 'https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express6_CC_8613.jpg',
+  },
+  {
+    title: 'Cushman Hauler PRO',
+    slug: 'cushman-hauler-pro',
+    category: 'industrial' as const,
+    seats: 2,
+    badge: 'תעשייתי',
+    image: 'https://ezgo.txtsv.com/sites/default/files/2024-01/CUS_GOF_HaulerPRO_ELiTE_2022_04543.jpg',
+  },
+  {
+    title: 'RXV 4 Gas',
+    slug: 'rxv-4-gas',
+    category: 'gas' as const,
+    seats: 4,
+    image: 'https://ezgo.txtsv.com/sites/default/files/2025-05/FreedomRXV_CON_4Pass_OceanGrey_v28_960x720_0.png',
+  },
+];
+
+const categories = [
+  {
+    title: 'רכבים חשמליים',
+    description: 'טכנולוגיית ELiTE Lithium מתקדמת',
+    href: '/electric/',
+    icon: '⚡',
+    count: 5,
+  },
+  {
+    title: 'רכבי בנזין',
+    description: 'מנועי EX1 חזקים וחסכוניים',
+    href: '/gas/',
+    icon: '⛽',
+    count: 3,
+  },
+  {
+    title: 'רכבי משא',
+    description: '6 מושבים לקהילות ואתרי נופש',
+    href: '/cargo/',
+    icon: '🚐',
+    count: 2,
+  },
+  {
+    title: 'לתעשייה',
+    description: 'Cushman לשימוש תעשייתי',
+    href: '/industrial/',
+    icon: '🏭',
+    count: 2,
+  },
+];
+
+const faqItems = [
+  {
+    question: 'מה ההבדל בין רכב E-Z-GO חשמלי לבנזין?',
+    answer: 'רכבי E-Z-GO חשמליים עם טכנולוגיית ELiTE Lithium מציעים אפס פליטות, תחזוקה מינימלית ועלויות הפעלה נמוכות. רכבי הבנזין מתאימים לשימוש אינטנסיבי בשטחים גדולים ומציעים טווח נסיעה ארוך יותר ללא צורך בטעינה.',
+  },
+  {
+    question: 'האם רכבי E-Z-GO מתאימים לקיבוצים ומושבים?',
+    answer: 'בהחלט! רכבי E-Z-GO הם הבחירה המובילה עבור קיבוצים ומושבים בישראל. הם מציעים נסיעה שקטה, תחזוקה פשוטה, ומגוון דגמים מ-2 עד 6 מושבים לכל צורך.',
+  },
+  {
+    question: 'מהי טכנולוגיית ELiTE Lithium?',
+    answer: 'ELiTE Lithium היא טכנולוגיית הסוללות המתקדמת של E-Z-GO, המשלבת סוללות Samsung SDI. היתרונות: אפס תחזוקה, טעינה מהירה, חיי סוללה ארוכים (8+ שנים), ביצועים עקביים גם בעומסים כבדים.',
+  },
+  {
+    question: 'איפה אפשר לקבל שירות לרכבי E-Z-GO בישראל?',
+    answer: 'יש לנו רשת של 14 מוסכים מומלצים ברחבי הארץ - בצפון, במרכז ובדרום. כל המוסכים מתמחים ברכבים תפעוליים חשמליים ועובדים עם חלקי חילוף מקוריים. <a href="/service/service-centers/" class="text-ezgo-600 hover:text-ezgo-700 underline">לרשימת מרכזי השירות</a>.',
+  },
+  {
+    question: 'מה האחריות על רכבי E-Z-GO?',
+    answer: 'E-Z-GO מציעה אחריות יצרן מקיפה. סוללות ליתיום מגיעות עם אחריות מורחבת של עד 8 שנים. לפרטים מדויקים על תנאי האחריות, צרו קשר לייעוץ אישי.',
+  },
+  {
+    question: 'האם אפשר להזמין רכב E-Z-GO דרך האתר?',
+    answer: 'האתר מציע מידע מקיף על כל דגמי E-Z-GO. לקבלת הצעת מחיר ופרטים על הזמנה, מלאו את טופס יצירת הקשר או התקשרו אלינו. נשמח לייעץ ולהתאים את הרכב המושלם לצרכים שלכם.',
+  },
+];
+
+const trustStats = [
+  { value: '65+', label: 'שנות ייצור' },
+  { value: '200+', label: 'מדינות' },
+  { value: 'Textron', label: 'NYSE: TXT' },
+  { value: '14', label: 'מוסכים בישראל' },
+];
+---
+
+<BaseLayout
+  title="EZ-GO Israel - רכבים תפעוליים חשמליים ובנזין | איזי גו ישראל"
+  description="המומחים לרכבי E-Z-GO בישראל. רכבים תפעוליים חשמליים ובנזין לקיבוצים, מלונות, מפעלים ואתרי נופש. ייעוץ מקצועי ו-14 מוסכים ברחבי הארץ."
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-bl from-ezgo-900 via-ezgo-800 to-dark text-white py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-8 items-center">
+        <!-- Text -->
+        <div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            רכבי <span class="text-ezgo-400">E-Z-GO</span><br />
+            לכל שימוש
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 max-w-lg">
+            מעל 65 שנות מצוינות. טכנולוגיית ELiTE Lithium המתקדמת ביותר.
+            רכבים תפעוליים לקיבוצים, מלונות, מפעלים ואתרי נופש.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a
+              href="/contact/"
+              class="inline-flex items-center px-6 py-3 bg-accent text-white font-semibold rounded-md hover:bg-amber-600 transition-colors shadow-lg"
+            >
+              קבלו ייעוץ מקצועי
+            </a>
+            <a
+              href="/electric/"
+              class="inline-flex items-center px-6 py-3 border-2 border-white/30 text-white font-semibold rounded-md hover:bg-white/10 transition-colors"
+            >
+              כל הדגמים
+            </a>
+          </div>
+        </div>
+        <!-- Image -->
+        <div class="relative">
+          <img
+            src="https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_LibertyLSV_CC_9747.jpg"
+            alt="רכב E-Z-GO Liberty - רכב תפעולי חשמלי"
+            class="rounded-2xl shadow-2xl w-full"
+            width="700"
+            height="525"
+            loading="eager"
+            fetchpriority="high"
+          />
+          <div class="absolute -bottom-4 -start-4 bg-white rounded-lg shadow-lg p-4 hidden md:block">
+            <p class="text-dark font-bold text-lg">Liberty LSV</p>
+            <p class="text-gray-500 text-sm">נסיעה ברחוב מאושרת</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <section class="bg-white py-6 border-b border-border">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        {trustStats.map((stat) => (
+          <div>
+            <p class="text-2xl md:text-3xl font-bold text-ezgo-600">{stat.value}</p>
+            <p class="text-gray-500 text-sm">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="py-12 md:py-16 bg-surface">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-dark mb-3">קטגוריות</h2>
+        <p class="text-gray-600">12 דגמים ב-4 קטגוריות לכל צורך</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {categories.map((cat) => (
+          <a
+            href={cat.href}
+            class="group p-6 bg-white rounded-xl border border-border hover:border-ezgo-200 hover:shadow-lg transition-all"
+          >
+            <span class="text-4xl mb-4 block">{cat.icon}</span>
+            <h3 class="font-bold text-dark text-lg mb-1 group-hover:text-ezgo-600 transition-colors">{cat.title}</h3>
+            <p class="text-gray-500 text-sm mb-3">{cat.description}</p>
+            <span class="text-ezgo-600 text-sm font-medium">{cat.count} דגמים &larr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Models -->
+  <section class="py-12 md:py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-dark mb-3">דגמים מובילים</h2>
+        <p class="text-gray-600">הדגמים הפופולריים ביותר של E-Z-GO</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {featuredModels.map((model) => (
+          <ProductCard {...model} />
+        ))}
+      </div>
+      <div class="text-center mt-8">
+        <a href="/electric/" class="text-ezgo-600 hover:text-ezgo-700 font-medium">
+          לכל הדגמים &larr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Snippet -->
+  <section class="py-12 md:py-16 bg-surface">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-bold text-dark mb-4">למה E-Z-GO?</h2>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            E-Z-GO נוסדה ב-1954 באוגוסטה, ג'ורג'יה על ידי שני אחים שרצו לבנות את רכב הגולף הטוב ביותר בעולם.
+            היום, כחלק מ-Textron Inc. (NYSE: TXT), E-Z-GO מובילה את התעשייה עם טכנולוגיות מתקדמות כמו ELiTE Lithium וסוללות Samsung SDI.
+          </p>
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-ezgo-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-700">סוללות ליתיום ללא תחזוקה - חיי סוללה 8+ שנים</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-ezgo-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-700">ISO 9001 certified - איכות יצרן ללא פשרות</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-ezgo-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-700">פרס Shingo לייצור מצוין (2009)</span>
+            </li>
+          </ul>
+          <a href="/about/" class="text-ezgo-600 hover:text-ezgo-700 font-medium">
+            עוד על E-Z-GO &larr;
+          </a>
+        </div>
+        <div>
+          <img
+            src="https://ezgo.txtsv.com/sites/default/files/2025-05/_0000_Textron_EZGO_MY25_Spring-0689%20%281%29.jpg"
+            alt="רכבי E-Z-GO - טכנולוגיה מתקדמת"
+            class="rounded-xl shadow-lg w-full"
+            width="600"
+            height="400"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Network -->
+  <section class="py-10 md:py-12 bg-ezgo-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <h2 class="text-2xl font-bold text-dark mb-2">רשת שירות ארצית</h2>
+          <p class="text-gray-600">14 מוסכים מומלצים בצפון, במרכז ובדרום</p>
+        </div>
+        <a
+          href="/service/service-centers/"
+          class="inline-flex items-center px-6 py-3 bg-ezgo-600 text-white font-semibold rounded-md hover:bg-ezgo-700 transition-colors"
+        >
+          מצאו מוסך קרוב
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-12 md:py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4">
+      <FAQ items={faqItems} title="שאלות נפוצות" />
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="py-12 md:py-16 bg-surface">
+    <div class="max-w-xl mx-auto px-4">
+      <ContactForm title="קבלו ייעוץ מקצועי" />
+    </div>
+  </section>
+</BaseLayout>
+
+<!-- Organization Schema -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "EZ-GO Israel - איזי גו ישראל",
+  "url": "https://ez-go.co.il",
+  "description": "המומחים לרכבי E-Z-GO בישראל. ייעוץ מקצועי, שירות ותמיכה.",
+  "telephone": "+972-77-231-2585",
+  "email": "support@ez-go.co.il",
+  "sameAs": [
+    "https://www.facebook.com/ezgo",
+    "https://www.youtube.com/user/EZGO",
+    "https://www.linkedin.com/company/ezgo",
+    "https://www.instagram.com/ezgocarts"
+  ]
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "EZ-GO Israel",
+  "url": "https://ez-go.co.il",
+  "inLanguage": "he-IL"
+})} />
