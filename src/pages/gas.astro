@@ -73,11 +73,30 @@ const faqItems = [
     </div>
     <div class="relative z-10 max-w-7xl mx-auto px-4 py-16 w-full">
       <Breadcrumbs items={breadcrumbs} />
-      <div class="max-w-2xl mt-6 ms-auto text-white">
+      <div class="max-w-2xl mt-6 text-white">
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">רכבי E-Z-GO בנזין</h1>
         <p class="text-xl text-gray-200">
           מנועי EX1 חזקים וחסכוניים - אידיאליים לשטחים גדולים ולשימוש אינטנסיבי ללא הפסקות טעינה.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Models Grid - Right after Hero -->
+  <section class="py-12 md:py-16 bg-surface">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-8">דגמי E-Z-GO בנזין</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {models.map((model) => (
+          <ProductCard
+            name={model.name}
+            hebrewName={model.hebrewName}
+            seats={model.seats}
+            powerType={model.powerType}
+            image={model.mainImage}
+            href={`/models/${model.slug}/`}
+          />
+        ))}
       </div>
     </div>
   </section>
@@ -123,25 +142,6 @@ const faqItems = [
           <h3 class="font-bold text-dark">תחזוקה פשוטה</h3>
           <p class="text-sm text-gray-600 mt-1">טיפולים קלים ומהירים</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Models Grid -->
-  <section class="py-12 md:py-16 bg-surface">
-    <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-dark mb-8">דגמי E-Z-GO בנזין</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {models.map((model) => (
-          <ProductCard
-            name={model.name}
-            hebrewName={model.hebrewName}
-            seats={model.seats}
-            powerType={model.powerType}
-            image={model.mainImage}
-            href={`/models/${model.slug}/`}
-          />
-        ))}
       </div>
     </div>
   </section>

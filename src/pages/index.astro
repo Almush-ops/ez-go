@@ -141,16 +141,16 @@ const trustStats = [
     <!-- Content -->
     <div class="relative z-10 max-w-7xl mx-auto px-4 py-20 w-full">
       <div class="max-w-2xl ms-auto text-white">
-        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-          It's Good<br />
-          <span class="text-cyan">to GO.</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          רכבים תפעוליים<br />
+          <span class="text-cyan">מהמובילים בעולם</span>
         </h1>
         <p class="text-xl md:text-2xl text-gray-200 mb-4">
-          מעל 65 שנות מצוינות.
+          מעל 65 שנות מצוינות. חלק מ-Textron Inc.
         </p>
         <p class="text-lg text-gray-300 mb-8 max-w-lg">
-          רכבים תפעוליים חשמליים ובנזין לקיבוצים, מלונות, מפעלים ואתרי נופש.
-          טכנולוגיית ELiTE Lithium המתקדמת ביותר.
+          דגמים חשמליים ובנזין לקיבוצים, מלונות, מפעלים ואתרי נופש.
+          טכנולוגיית ELiTE Lithium עם סוללות Samsung SDI.
         </p>
         <div class="flex flex-wrap gap-4">
           <a
@@ -194,28 +194,187 @@ const trustStats = [
     </div>
   </section>
 
-  <!-- Categories -->
-  <section class="py-12 md:py-16 bg-surface">
+  <!-- Categories - Manufacturer Style with Tabs -->
+  <section class="py-16 md:py-20 bg-cyan/30">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-10">
-        <h2 class="text-3xl font-bold text-dark mb-3">קטגוריות</h2>
-        <p class="text-gray-600">12 דגמים ב-4 קטגוריות לכל צורך</p>
+      <div class="text-center mb-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-dark mb-3">בחרו את הרכב שלכם</h2>
+        <div class="w-16 h-1 bg-dark mx-auto mb-4"></div>
+        <p class="text-gray-600 max-w-2xl mx-auto">מגוון דגמים לכל צורך - מגולף קארט קומפקטי ועד רכב הסעות ל-6 נוסעים</p>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {categories.map((cat) => (
-          <a
-            href={cat.href}
-            class="group p-6 bg-white rounded-xl border border-border hover:border-ezgo-200 hover:shadow-lg transition-all"
-          >
-            <span class="text-4xl mb-4 block">{cat.icon}</span>
-            <h3 class="font-bold text-dark text-lg mb-1 group-hover:text-ezgo-600 transition-colors">{cat.title}</h3>
-            <p class="text-gray-500 text-sm mb-3">{cat.description}</p>
-            <span class="text-ezgo-600 text-sm font-medium">{cat.count} דגמים &larr;</span>
-          </a>
-        ))}
+
+      <!-- Category Tabs -->
+      <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-8" role="tablist">
+        <button type="button" role="tab" aria-selected="true" data-tab="electric" class="category-tab px-6 py-3 font-semibold text-dark border-b-4 border-dark bg-white/50 hover:bg-white transition-colors">
+          רכבים חשמליים
+        </button>
+        <button type="button" role="tab" aria-selected="false" data-tab="gas" class="category-tab px-6 py-3 font-semibold text-gray-600 border-b-4 border-transparent hover:border-gray-300 hover:bg-white/50 transition-colors">
+          רכבי בנזין
+        </button>
+        <button type="button" role="tab" aria-selected="false" data-tab="cargo" class="category-tab px-6 py-3 font-semibold text-gray-600 border-b-4 border-transparent hover:border-gray-300 hover:bg-white/50 transition-colors">
+          רכבי משא
+        </button>
+        <button type="button" role="tab" aria-selected="false" data-tab="industrial" class="category-tab px-6 py-3 font-semibold text-gray-600 border-b-4 border-transparent hover:border-gray-300 hover:bg-white/50 transition-colors">
+          לתעשייה
+        </button>
+      </div>
+
+      <!-- Tab Panels -->
+      <div id="panel-electric" class="category-panel" role="tabpanel">
+        <div class="grid lg:grid-cols-2 gap-0 bg-white rounded-xl overflow-hidden shadow-xl">
+          <div class="relative aspect-[4/3] lg:aspect-auto">
+            <img src="https://ezgo.txtsv.com/sites/default/files/2025-05/EZGO_GOF_2025_RXV2_CC_9767_706x706.jpg" alt="רכבים חשמליים E-Z-GO" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-8 lg:p-12 flex flex-col justify-center bg-dark text-white">
+            <h3 class="text-2xl md:text-3xl font-bold mb-4">רכבים חשמליים</h3>
+            <p class="text-gray-300 mb-6 text-lg">
+              טכנולוגיית ELiTE Lithium המתקדמת עם סוללות Samsung SDI. אפס פליטות, תחזוקה מינימלית וחיי סוללה של 8+ שנים. הבחירה המושלמת לקיבוצים ואתרי נופש.
+            </p>
+            <ul class="space-y-2 mb-8 text-gray-300">
+              <li class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-cyan" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                סוללות ליתיום - ללא תחזוקה
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-cyan" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                נסיעה שקטה וחלקה
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-cyan" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                5 דגמים - 2 עד 6 מושבים
+              </li>
+            </ul>
+            <a href="/electric/" class="inline-flex items-center gap-2 text-cyan font-semibold text-lg group">
+              צפו בדגמים החשמליים
+              <svg class="w-5 h-5 rtl:rotate-180 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="panel-gas" class="category-panel hidden" role="tabpanel">
+        <div class="grid lg:grid-cols-2 gap-0 bg-white rounded-xl overflow-hidden shadow-xl">
+          <div class="relative aspect-[4/3] lg:aspect-auto">
+            <img src="https://ezgo.txtsv.com/sites/default/files/2025-05/FreedomRXV_CON_4Pass_OceanGrey_v28_960x720_0.png" alt="רכבי בנזין E-Z-GO" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-8 lg:p-12 flex flex-col justify-center bg-dark text-white">
+            <h3 class="text-2xl md:text-3xl font-bold mb-4">רכבי בנזין</h3>
+            <p class="text-gray-300 mb-6 text-lg">
+              מנועי EX1 חזקים וחסכוניים לשימוש אינטנסיבי. טווח נסיעה ארוך ללא צורך בטעינה, מתאימים לשטחים גדולים ומגרשי גולף.
+            </p>
+            <ul class="space-y-2 mb-8 text-gray-300">
+              <li class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-cyan" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                מנוע EX1 חסכוני בדלק
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-cyan" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                טווח נסיעה מורחב
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-cyan" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                4 דגמים - 2 עד 6 מושבים
+              </li>
+            </ul>
+            <a href="/gas/" class="inline-flex items-center gap-2 text-cyan font-semibold text-lg group">
+              צפו בדגמי הבנזין
+              <svg class="w-5 h-5 rtl:rotate-180 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="panel-cargo" class="category-panel hidden" role="tabpanel">
+        <div class="grid lg:grid-cols-2 gap-0 bg-white rounded-xl overflow-hidden shadow-xl">
+          <div class="relative aspect-[4/3] lg:aspect-auto">
+            <img src="https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express6_CC_8613.jpg" alt="רכבי משא E-Z-GO" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-8 lg:p-12 flex flex-col justify-center bg-dark text-white">
+            <h3 class="text-2xl md:text-3xl font-bold mb-4">רכבי משא</h3>
+            <p class="text-gray-300 mb-6 text-lg">
+              רכבי הסעות ל-6 נוסעים, מושלמים לקהילות, אתרי נופש ומלונות. נוחות מרבית לנוסעים עם מושבים איכותיים ונסיעה חלקה.
+            </p>
+            <ul class="space-y-2 mb-8 text-gray-300">
+              <li class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-cyan" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                6 מושבים נוחים
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-cyan" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                מתאים להסעות קבוצתיות
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-cyan" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                חשמלי או בנזין
+              </li>
+            </ul>
+            <a href="/cargo/" class="inline-flex items-center gap-2 text-cyan font-semibold text-lg group">
+              צפו ברכבי המשא
+              <svg class="w-5 h-5 rtl:rotate-180 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="panel-industrial" class="category-panel hidden" role="tabpanel">
+        <div class="grid lg:grid-cols-2 gap-0 bg-white rounded-xl overflow-hidden shadow-xl">
+          <div class="relative aspect-[4/3] lg:aspect-auto">
+            <img src="https://ezgo.txtsv.com/sites/default/files/2024-01/CUS_GOF_HaulerPRO_ELiTE_2022_04543.jpg" alt="רכבים תעשייתיים Cushman" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-8 lg:p-12 flex flex-col justify-center bg-dark text-white">
+            <h3 class="text-2xl md:text-3xl font-bold mb-4">רכבים לתעשייה</h3>
+            <p class="text-gray-300 mb-6 text-lg">
+              רכבי Cushman תעשייתיים לשימוש במפעלים, מחסנים ואתרי ייצור. עיצוב עמיד לתנאי עבודה קשים עם קיבולת משא גבוהה.
+            </p>
+            <ul class="space-y-2 mb-8 text-gray-300">
+              <li class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-cyan" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                מותג Cushman המוביל
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-cyan" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                קיבולת משא גבוהה
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-cyan" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                בנוי לעבודה אינטנסיבית
+              </li>
+            </ul>
+            <a href="/industrial/" class="inline-flex items-center gap-2 text-cyan font-semibold text-lg group">
+              צפו ברכבים התעשייתיים
+              <svg class="w-5 h-5 rtl:rotate-180 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- Category Tabs Script -->
+  <script>
+    const tabs = document.querySelectorAll('.category-tab');
+    const panels = document.querySelectorAll('.category-panel');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const targetId = `panel-${tab.dataset.tab}`;
+
+        // Update tabs
+        tabs.forEach(t => {
+          t.classList.remove('border-dark', 'text-dark', 'bg-white/50');
+          t.classList.add('border-transparent', 'text-gray-600');
+          t.setAttribute('aria-selected', 'false');
+        });
+        tab.classList.add('border-dark', 'text-dark', 'bg-white/50');
+        tab.classList.remove('border-transparent', 'text-gray-600');
+        tab.setAttribute('aria-selected', 'true');
+
+        // Update panels
+        panels.forEach(p => p.classList.add('hidden'));
+        document.getElementById(targetId)?.classList.remove('hidden');
+      });
+    });
+  </script>
 
   <!-- Featured Models -->
   <section class="py-12 md:py-16 bg-white">
@@ -328,10 +487,10 @@ const trustStats = [
   "telephone": "+972-77-231-2585",
   "email": "support@ez-go.co.il",
   "sameAs": [
-    "https://www.facebook.com/ezgo",
-    "https://www.youtube.com/user/EZGO",
-    "https://www.linkedin.com/company/ezgo",
-    "https://www.instagram.com/ezgocarts"
+    "https://www.facebook.com/EZGOVehicles",
+    "https://www.youtube.com/user/ezgoaugusta1",
+    "https://www.linkedin.com/showcase/ezgovehicles/",
+    "https://www.instagram.com/ezgovehicles"
   ]
 })} />
 
