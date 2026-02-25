@@ -4,7 +4,7 @@ slug: "ezgo-for-golf-courses"
 description: "למה מגרשי גולף מובילים בוחרים ברכבי E-Z-GO? היתרונות, הדגמים המתאימים וטיפים לבחירה נכונה."
 date: "2026-01-18"
 category: "uses"
-image: "https://ezgo.txtsv.com/sites/default/files/2025-05/EZGO_CON_FreedomRXV_PACE_2023_CC_0366_840x472.jpg"
+image: "/images/blog/ezgo-con-freedomrxv-pace-2023-cc-0366-840x472.webp"
 faq:
   - question: "למה E-Z-GO נחשבת מותג גולף מוביל?"
     answer: "E-Z-GO נוסדה ב-1954 באוגוסטה, ג'ורג'יה - בירת הגולף של אמריקה. היא מתמחה ברכבי גולף כבר 70 שנה ומשרתת את המגרשים המובילים בעולם."

@@ -4,7 +4,7 @@ slug: "ezgo-vs-marshell"
 description: "השוואה מעמיקה בין E-Z-GO האמריקאית ל-Marshell הסינית. יתרונות וחסרונות, הבדלים בטכנולוגיה, ולמי מתאים כל מותג."
 date: "2026-01-08"
 category: "comparisons"
-image: "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_LibertyPLUS_2051.jpg"
+image: "/images/models/liberty-main.webp"
 faq:
   - question: "מה ההבדל העיקרי בין E-Z-GO ל-Marshell?"
     answer: "E-Z-GO הוא מותג אמריקאי ותיק (מ-1954) עם טכנולוגיה מתקדמת כמו ELiTE Lithium. Marshell היא יצרנית סינית עם מחירים תחרותיים יותר אך פחות מוניטין היסטורי."

@@ -4,7 +4,7 @@ slug: "ezgo-elite-lithium-technology"
 description: "כל מה שצריך לדעת על טכנולוגיית ELiTE Lithium של E-Z-GO - סוללות Samsung SDI, יתרונות ומה שמייחד אותה."
 date: "2026-01-20"
 category: "technical"
-image: "https://ezgo.txtsv.com/sites/default/files/2025-05/_0001_Textron_EZGO_MY25_Spring-9757.jpg"
+image: "/images/blog/-0001-textron-ezgo-my25-spring-9757.webp"
 faq:
   - question: "מה מיוחד בטכנולוגיית ELiTE Lithium?"
     answer: "ELiTE Lithium משלבת סוללות ליתיום של Samsung SDI עם מערכת ניהול אנרגיה חכמה - התוצאה: ביצועים עקביים, טעינה מהירה וללא תחזוקה."

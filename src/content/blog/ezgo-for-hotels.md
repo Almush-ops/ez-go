@@ -4,7 +4,7 @@ slug: "ezgo-for-hotels"
 description: "למה מלונות ואתרי נופש מובילים בוחרים ברכבי E-Z-GO? יתרונות, דגמים מתאימים וטיפים לבחירה."
 date: "2026-02-03"
 category: "uses"
-image: "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_LibertyLSV_CC_3604.jpg"
+image: "/images/blog/ezgo-con-2025-libertylsv-cc-3604.webp"
 faq:
   - question: "איזה דגם מתאים למלון קטן?"
     answer: "למלון קטן מומלץ Express 4 או RXV 4. למלון גדול עם שטחים נרחבים - Express 6 או צי של מספר רכבים."

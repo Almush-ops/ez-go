@@ -4,7 +4,7 @@ slug: "how-to-choose-golf-cart"
 description: "מדריך מקיף לבחירת רכב גולף או רכב תפעולי. כל מה שצריך לדעת על מספר מושבים, סוג הנעה, תקציב ועוד."
 date: "2026-02-05"
 category: "guides"
-image: "https://ezgo.txtsv.com/sites/default/files/2025-12/EZGO_CON_2025_Group_CC_7897.jpg"
+image: "/images/blog/ezgo-con-2025-group-cc-7897.webp"
 faq:
   - question: "כמה עולה רכב גולף?"
     answer: "המחיר משתנה מאוד לפי דגם, מותג ומפרט. צרו קשר לקבלת הצעת מחיר מותאמת לצרכים שלכם."

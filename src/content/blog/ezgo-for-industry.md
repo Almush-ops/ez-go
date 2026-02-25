@@ -4,7 +4,7 @@ slug: "ezgo-for-industry"
 description: "רכבי E-Z-GO ו-Cushman לשימוש תעשייתי - הפתרון האידיאלי למפעלים, מחסנים ומתקני ייצור."
 date: "2026-01-25"
 category: "uses"
-image: "https://ezgo.txtsv.com/sites/default/files/2024-01/CUS_GOF_HaulerPRO_ELiTE_2022_04543.jpg"
+image: "/images/blog/cus-gof-haulerpro-elite-2022-04543.webp"
 faq:
   - question: "האם רכבי E-Z-GO מתאימים לשימוש פנימי במפעלים?"
     answer: "כן, רכבי E-Z-GO חשמליים מתאימים במיוחד לשימוש פנימי - הם שקטים, ללא פליטות ובטוחים לעבודה בסביבה סגורה."

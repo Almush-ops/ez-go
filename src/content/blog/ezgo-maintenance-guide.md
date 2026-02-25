@@ -4,7 +4,7 @@ slug: "ezgo-maintenance-guide"
 description: "מדריך מקיף לתחזוקת רכבי E-Z-GO. בדיקות יומיות, טיפולים תקופתיים וטיפים לשמירה על ביצועים מיטביים."
 date: "2026-01-28"
 category: "technical"
-image: "https://ezgo.txtsv.com/sites/default/files/2025-05/Valor2_Cruiser_Platinum_v31_960x720.png"
+image: "/images/blog/valor2-cruiser-platinum-v31-960x720.webp"
 faq:
   - question: "כל כמה זמן צריך לעשות טיפול לרכב E-Z-GO?"
     answer: "מומלץ לבצע טיפול תקופתי אחת לשנה או כל 1,000 ק\"מ - המוקדם מביניהם. בדיקות בסיסיות יש לבצע באופן יומי."

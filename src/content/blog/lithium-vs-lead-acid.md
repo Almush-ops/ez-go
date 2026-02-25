@@ -4,7 +4,7 @@ slug: "lithium-vs-lead-acid"
 description: "השוואה מקיפה בין סוללות ליתיום ELiTE לסוללות עופרת-חומצה ברכבי E-Z-GO. יתרונות, חסרונות ומה כדאי לבחור."
 date: "2026-02-10"
 category: "guides"
-image: "https://ezgo.txtsv.com/sites/default/files/2025-05/_0001_Textron_EZGO_MY25_Spring-9757.jpg"
+image: "/images/blog/-0001-textron-ezgo-my25-spring-9757.webp"
 faq:
   - question: "כמה זמן מחזיקות סוללות ליתיום של E-Z-GO?"
     answer: "סוללות ELiTE Lithium של E-Z-GO מחזיקות בדרך כלל 7-10 שנים או 3,000-5,000 מחזורי טעינה, תלוי בתנאי השימוש."

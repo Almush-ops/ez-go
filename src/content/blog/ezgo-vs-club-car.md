@@ -4,7 +4,7 @@ slug: "ezgo-vs-club-car"
 description: "השוואה מעמיקה בין E-Z-GO לבין Club Car - שני המותגים המובילים בעולם הרכבים התפעוליים. איזה מהם מתאים לכם?"
 date: "2026-02-15"
 category: "comparisons"
-image: "https://ezgo.txtsv.com/sites/default/files/2025-05/EZGO_GOF_2025_RXV2_CC_9767_706x706.jpg"
+image: "/images/blog/ezgo-gof-2025-rxv2-cc-9767-706x706.webp"
 faq:
   - question: "מי מייצר יותר רכבים - E-Z-GO או Club Car?"
     answer: "שני היצרנים הם המובילים בשוק העולמי עם נתחי שוק דומים. E-Z-GO (Textron) ו-Club Car (Ingersoll Rand) מייצרים כל אחד מאות אלפי רכבים בשנה."

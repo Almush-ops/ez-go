@@ -4,7 +4,7 @@ slug: "ezgo-vs-yamaha"
 description: "השוואה מקיפה בין E-Z-GO ל-Yamaha Golf Cars. שני מותגים מובילים, שתי גישות שונות. מי מנצח ב-2024?"
 date: "2026-01-07"
 category: "comparisons"
-image: "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_RXV_ELiTE_G_2049.jpg"
+image: "/images/models/rxv-2-main.webp"
 faq:
   - question: "מה ההבדל בין E-Z-GO ל-Yamaha?"
     answer: "E-Z-GO מתמקדת בטכנולוגיית ליתיום מתקדמת (ELiTE) ושימושים תעשייתיים. Yamaha מגיעה מעולם האופנועים עם דגש על ביצועים ונוחות נהיגה."

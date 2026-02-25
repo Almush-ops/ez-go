@@ -4,7 +4,7 @@ slug: "ezgo-for-kibbutz"
 description: "למה קיבוצים ומושבים בוחרים ברכבי E-Z-GO? מדריך מקיף על היתרונות, הדגמים המתאימים וטיפים לבחירה נכונה."
 date: "2026-02-12"
 category: "uses"
-image: "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express6_CC_8613.jpg"
+image: "/images/blog/ezgo-con-2025-express6-cc-8613.webp"
 faq:
   - question: "כמה עולה רכב E-Z-GO לקיבוץ?"
     answer: "המחיר משתנה בהתאם לדגם, למפרט ולכמות. צרו קשר לקבלת הצעת מחיר מותאמת לצרכי הקיבוץ."

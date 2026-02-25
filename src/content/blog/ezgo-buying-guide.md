@@ -4,7 +4,7 @@ slug: "ezgo-buying-guide"
 description: "מדריך מקיף לרכישת רכב E-Z-GO - שאלות לשאול, מה לבדוק, וטיפים לקבלת ההחלטה הנכונה."
 date: "2026-01-12"
 category: "guides"
-image: "https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express4_CC_2045.jpg"
+image: "/images/blog/ezgo-con-2025-express4-cc-2045.webp"
 faq:
   - question: "מה התקציב המינימלי לרכב E-Z-GO?"
     answer: "המחיר משתנה מאוד לפי דגם ומפרט. צרו קשר לקבלת הצעת מחיר מותאמת לצרכים ולתקציב שלכם."

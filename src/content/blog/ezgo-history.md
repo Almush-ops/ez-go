@@ -4,7 +4,7 @@ slug: "ezgo-history"
 description: "הסיפור המרתק של E-Z-GO - מהקמתה ב-1954 על ידי שני אחים ועד להפיכתה למותג המוביל בעולם הרכבים התפעוליים."
 date: "2026-02-08"
 category: "info"
-image: "https://ezgo.txtsv.com/sites/default/files/2025-05/EZGO_CON_FreedomRXV_PACE_2023_CC_0366_840x472.jpg"
+image: "/images/blog/ezgo-con-freedomrxv-pace-2023-cc-0366-840x472.webp"
 faq:
   - question: "מתי נוסדה E-Z-GO?"
     answer: "E-Z-GO נוסדה ב-1954 באוגוסטה, ג'ורג'יה, על ידי האחים בילי ובוורלי דולן."

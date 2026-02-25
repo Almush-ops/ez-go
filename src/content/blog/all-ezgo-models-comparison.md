@@ -4,7 +4,7 @@ slug: "all-ezgo-models-comparison"
 description: "השוואה מקיפה בין כל דגמי E-Z-GO - חשמליים, בנזין, משא ותעשייה. טבלאות השוואה ומדריך בחירה."
 date: "2026-01-15"
 category: "info"
-image: "https://ezgo.txtsv.com/sites/default/files/2025-12/EZGO_CON_2025_Group_CC_7897.jpg"
+image: "/images/blog/ezgo-con-2025-group-cc-7897.webp"
 faq:
   - question: "כמה דגמי E-Z-GO יש?"
     answer: "E-Z-GO מציעה מגוון רחב של דגמים בקטגוריות שונות - רכבים חשמליים, רכבי בנזין, רכבי משא ורכבים תעשייתיים. הדגמים העיקריים כוללים את סדרות RXV, Express, Liberty, Valor ו-Cushman."

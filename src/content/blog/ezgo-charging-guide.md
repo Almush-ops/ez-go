@@ -4,7 +4,7 @@ slug: "ezgo-charging-guide"
 description: "כל מה שצריך לדעת על טעינת רכבי E-Z-GO חשמליים - זמני טעינה, טיפים ותחזוקת סוללות."
 date: "2026-01-22"
 category: "technical"
-image: "https://ezgo.txtsv.com/sites/default/files/2025-05/EZGO_CON_2025_RXV4_CC_2082_840x472.jpg"
+image: "/images/blog/ezgo-con-2025-rxv4-cc-2082-840x472.webp"
 faq:
   - question: "כמה זמן לוקח לטעון רכב E-Z-GO?"
     answer: "סוללות ELiTE Lithium נטענות ב-3-5 שעות. סוללות עופרת-חומצה לוקחות 8-10 שעות."
