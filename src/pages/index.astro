@@ -11,14 +11,14 @@ const featuredModels = [
     slug: 'rxv-2',
     category: 'electric' as const,
     seats: 2,
-    image: 'https://ezgo.txtsv.com/sites/default/files/2025-05/EZGO_GOF_2025_RXV2_CC_9767_706x706.jpg',
+    image: '/images/models/rxv-2-main.webp',
   },
   {
     title: 'RXV 4',
     slug: 'rxv-4',
     category: 'electric' as const,
     seats: 4,
-    image: 'https://ezgo.txtsv.com/sites/default/files/2025-05/EZGO_CON_2025_RXV4_CC_3781_706x706.jpg',
+    image: '/images/models/rxv-4-main.webp',
   },
   {
     title: 'Liberty',
@@ -26,7 +26,7 @@ const featuredModels = [
     category: 'electric' as const,
     seats: 4,
     badge: 'Street Legal',
-    image: 'https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_LibertyLSV_CC_9747.jpg',
+    image: '/images/models/liberty-main.webp',
   },
   {
     title: 'Express 6 ELiTE',
@@ -34,7 +34,7 @@ const featuredModels = [
     category: 'electric' as const,
     seats: 6,
     badge: '6 מושבים',
-    image: 'https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express6_CC_8613.jpg',
+    image: '/images/models/express-6-main.webp',
   },
   {
     title: 'Cushman Hauler PRO',
@@ -42,14 +42,14 @@ const featuredModels = [
     category: 'industrial' as const,
     seats: 2,
     badge: 'תעשייתי',
-    image: 'https://ezgo.txtsv.com/sites/default/files/2024-01/CUS_GOF_HaulerPRO_ELiTE_2022_04543.jpg',
+    image: '/images/models/cushman-hauler-main.webp',
   },
   {
     title: 'RXV 4 Gas',
     slug: 'rxv-4-gas',
     category: 'gas' as const,
     seats: 4,
-    image: 'https://ezgo.txtsv.com/sites/default/files/2025-05/FreedomRXV_CON_4Pass_OceanGrey_v28_960x720_0.png',
+    image: '/images/models/rxv-4-gas-main.webp',
   },
 ];
 
@@ -128,7 +128,7 @@ const trustStats = [
     <!-- Background Image -->
     <div class="absolute inset-0">
       <img
-        src="https://ezgo.txtsv.com/sites/default/files/2025-12/EZGO_CON_2025_Group_CC_7897.jpg"
+        src="/images/hero/group-hero.webp"
         alt="רכבי E-Z-GO - קולקציית הדגמים"
         class="w-full h-full object-cover"
         loading="eager"
@@ -223,7 +223,7 @@ const trustStats = [
       <div id="panel-electric" class="category-panel" role="tabpanel">
         <div class="grid lg:grid-cols-2 gap-0 bg-white rounded-xl overflow-hidden shadow-xl">
           <div class="relative aspect-[4/3] lg:aspect-auto">
-            <img src="https://ezgo.txtsv.com/sites/default/files/2025-05/EZGO_GOF_2025_RXV2_CC_9767_706x706.jpg" alt="רכבים חשמליים E-Z-GO" class="w-full h-full object-cover" loading="lazy" />
+            <img src="/images/models/rxv-2-main.webp" alt="רכבים חשמליים E-Z-GO" class="w-full h-full object-cover" loading="lazy" />
           </div>
           <div class="p-8 lg:p-12 flex flex-col justify-center bg-dark text-white">
             <h3 class="text-2xl md:text-3xl font-bold mb-4">רכבים חשמליים</h3>
@@ -255,7 +255,7 @@ const trustStats = [
       <div id="panel-gas" class="category-panel hidden" role="tabpanel">
         <div class="grid lg:grid-cols-2 gap-0 bg-white rounded-xl overflow-hidden shadow-xl">
           <div class="relative aspect-[4/3] lg:aspect-auto">
-            <img src="https://ezgo.txtsv.com/sites/default/files/2025-05/FreedomRXV_CON_4Pass_OceanGrey_v28_960x720_0.png" alt="רכבי בנזין E-Z-GO" class="w-full h-full object-cover" loading="lazy" />
+            <img src="/images/models/rxv-4-gas-main.webp" alt="רכבי בנזין E-Z-GO" class="w-full h-full object-cover" loading="lazy" />
           </div>
           <div class="p-8 lg:p-12 flex flex-col justify-center bg-dark text-white">
             <h3 class="text-2xl md:text-3xl font-bold mb-4">רכבי בנזין</h3>
@@ -287,7 +287,7 @@ const trustStats = [
       <div id="panel-cargo" class="category-panel hidden" role="tabpanel">
         <div class="grid lg:grid-cols-2 gap-0 bg-white rounded-xl overflow-hidden shadow-xl">
           <div class="relative aspect-[4/3] lg:aspect-auto">
-            <img src="https://ezgo.txtsv.com/sites/default/files/2025-11/EZGO_CON_2025_Express6_CC_8613.jpg" alt="רכבי משא E-Z-GO" class="w-full h-full object-cover" loading="lazy" />
+            <img src="/images/models/express-6-main.webp" alt="רכבי משא E-Z-GO" class="w-full h-full object-cover" loading="lazy" />
           </div>
           <div class="p-8 lg:p-12 flex flex-col justify-center bg-dark text-white">
             <h3 class="text-2xl md:text-3xl font-bold mb-4">רכבי משא</h3>
@@ -319,7 +319,7 @@ const trustStats = [
       <div id="panel-industrial" class="category-panel hidden" role="tabpanel">
         <div class="grid lg:grid-cols-2 gap-0 bg-white rounded-xl overflow-hidden shadow-xl">
           <div class="relative aspect-[4/3] lg:aspect-auto">
-            <img src="https://ezgo.txtsv.com/sites/default/files/2024-01/CUS_GOF_HaulerPRO_ELiTE_2022_04543.jpg" alt="רכבים תעשייתיים Cushman" class="w-full h-full object-cover" loading="lazy" />
+            <img src="/images/models/cushman-hauler-main.webp" alt="רכבים תעשייתיים Cushman" class="w-full h-full object-cover" loading="lazy" />
           </div>
           <div class="p-8 lg:p-12 flex flex-col justify-center bg-dark text-white">
             <h3 class="text-2xl md:text-3xl font-bold mb-4">רכבים לתעשייה</h3>
@@ -432,7 +432,7 @@ const trustStats = [
         </div>
         <div>
           <img
-            src="https://ezgo.txtsv.com/sites/default/files/2025-05/_0000_Textron_EZGO_MY25_Spring-0689%20%281%29.jpg"
+            src="/images/lifestyle/golf-lifestyle.webp"
             alt="רכבי E-Z-GO - טכנולוגיה מתקדמת"
             class="rounded-xl shadow-lg w-full"
             width="600"
