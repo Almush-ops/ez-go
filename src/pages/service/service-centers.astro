@@ -13,27 +13,28 @@ interface ServiceCenter {
   address: string;
   phone: string;
   region: 'north' | 'center' | 'south';
-  hours?: string;
+  hours: string;
+  email?: string;
 }
 
 const serviceCenters: ServiceCenter[] = [
   // צפון
-  { name: 'GN סוכנויות', address: 'רמות נפתלי', phone: '04-6905080', region: 'north' },
-  { name: 'תל יוסף רכב חשמלי', address: 'עין חרוד מאוחד', phone: '04-6070134', region: 'north' },
-  { name: 'אוטוטק', address: 'רח\' העמל 1, אלוני אבא', phone: '04-8383232', region: 'north' },
-  { name: 'ארז מוטורס', address: 'כפר בית ג\'אן', phone: '072-2288456', region: 'north' },
-  { name: 'בשטח', address: 'קיבוץ מענית', phone: '074-7408404', region: 'north' },
-  { name: 'סוזוקה ע.פ', address: 'הקורנס 21, חיפה', phone: '04-8724501', region: 'north' },
+  { name: 'GN סוכנויות', address: 'מושב רמות נפתלי', phone: '04-6905080', region: 'north', hours: 'א-ה 08:00-17:00', email: 'gn@golfcart.co.il' },
+  { name: 'תל יוסף רכב חשמלי', address: 'עין חרוד מאוחד', phone: '04-6070134', region: 'north', hours: 'א-ה 07:30-17:00' },
+  { name: 'אוטוטק', address: 'רח\' העמל 1, אלוני אבא', phone: '04-8383232', region: 'north', hours: 'א-ה 08:00-17:00', email: 'autotek@golfcart.co.il' },
+  { name: 'ארז מוטורס', address: 'כפר בית ג\'אן', phone: '072-2288456', region: 'north', hours: 'א-ה 08:00-17:00', email: 'erez@golfcart.co.il' },
+  { name: 'בשטח', address: 'קיבוץ מענית', phone: '074-7408404', region: 'north', hours: 'א-ה 08:00-17:00', email: 'bashetach@golfcart.co.il' },
+  { name: 'סוזוקה ע.פ', address: 'הקורנס 21, חיפה', phone: '04-8724501', region: 'north', hours: 'א-ה 08:00-17:00', email: 'suzuka@golfcart.co.il' },
   // מרכז
-  { name: 'סקוטרז כפר סבא', address: 'הבנים 11, כפר סבא', phone: '050-6313131', region: 'center' },
-  { name: 'כסלו רכב עזר', address: 'טירה', phone: '09-7455222', region: 'center' },
-  { name: 'א.ג. קלנועיות', address: 'יעקב עולמי 51, משמר השבעה', phone: '03-5033319', region: 'center' },
-  { name: 'משה וגיא טרקטורונים', address: 'ההר 2, אזור תעשייה הר טוב', phone: '050-2676789', region: 'center' },
+  { name: 'סקוטרז כפר סבא', address: 'הבנים 11, כפר סבא', phone: '050-6313131', region: 'center', hours: 'א-ה 09:00-16:00' },
+  { name: 'כסלו רכב עזר', address: 'טירה', phone: '09-7455222', region: 'center', hours: 'א-ה 08:00-17:00' },
+  { name: 'א.ג. קלנועיות', address: 'יעקב עולמי 51, משמר השבעה', phone: '03-5033319', region: 'center', hours: 'א-ה 08:00-17:00' },
+  { name: 'משה וגיא טרקטורונים', address: 'ההר 2, אזור תעשייה הר טוב', phone: '050-2676789', region: 'center', hours: 'א-ה 08:00-18:00', email: 'moshegia@golfcart.co.il' },
   // דרום
-  { name: 'גוד ריידר', address: 'פלדה 5, ערד', phone: '052-9435571', region: 'south' },
-  { name: 'פרג לכיש', address: 'שדרות צורן 5, קרית גת', phone: '08-6885371', region: 'south' },
-  { name: 'מדי אילת', address: 'מרכז הוכמן, מדיין 12, אילת', phone: '08-6332657', region: 'south' },
-  { name: 'רותם סייקל', address: 'התופרת 6, אילת', phone: '08-6315540', region: 'south' },
+  { name: 'גוד ריידר', address: 'פלדה 5, ערד', phone: '052-9435571', region: 'south', hours: 'א-ה 09:00-16:00' },
+  { name: 'פרג לכיש', address: 'שדרות צורן 5, קרית גת', phone: '08-6885371', region: 'south', hours: 'א-ה 09:00-16:00', email: 'perag@golfcart.co.il' },
+  { name: 'מדי אילת', address: 'מרכז הוכמן, מדיין 12, אילת', phone: '08-6332657', region: 'south', hours: 'א-ה 09:00-19:00' },
+  { name: 'רותם סייקל', address: 'התופרת 6, אילת', phone: '08-6315540', region: 'south', hours: 'א-ה 08:00-17:00', email: 'rotem@golfcart.co.il' },
 ];
 
 const northCenters = serviceCenters.filter(c => c.region === 'north');
@@ -108,6 +109,20 @@ const southCenters = serviceCenters.filter(c => c.region === 'south');
                 </svg>
                 <a href={`tel:${center.phone}`} class="text-ezgo-600 hover:text-ezgo-700 font-medium" dir="ltr">{center.phone}</a>
               </div>
+              <div class="flex items-center gap-2 text-gray-600">
+                <svg class="w-4 h-4 text-ezgo-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>{center.hours}</span>
+              </div>
+              {center.email && (
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-ezgo-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <a href={`mailto:${center.email}`} class="text-ezgo-600 hover:text-ezgo-700 font-medium">{center.email}</a>
+                </div>
+              )}
             </div>
           </div>
         ))}
@@ -145,6 +160,20 @@ const southCenters = serviceCenters.filter(c => c.region === 'south');
                 </svg>
                 <a href={`tel:${center.phone}`} class="text-ezgo-600 hover:text-ezgo-700 font-medium" dir="ltr">{center.phone}</a>
               </div>
+              <div class="flex items-center gap-2 text-gray-600">
+                <svg class="w-4 h-4 text-ezgo-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>{center.hours}</span>
+              </div>
+              {center.email && (
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-ezgo-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <a href={`mailto:${center.email}`} class="text-ezgo-600 hover:text-ezgo-700 font-medium">{center.email}</a>
+                </div>
+              )}
             </div>
           </div>
         ))}
@@ -182,6 +211,20 @@ const southCenters = serviceCenters.filter(c => c.region === 'south');
                 </svg>
                 <a href={`tel:${center.phone}`} class="text-ezgo-600 hover:text-ezgo-700 font-medium" dir="ltr">{center.phone}</a>
               </div>
+              <div class="flex items-center gap-2 text-gray-600">
+                <svg class="w-4 h-4 text-ezgo-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>{center.hours}</span>
+              </div>
+              {center.email && (
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-ezgo-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <a href={`mailto:${center.email}`} class="text-ezgo-600 hover:text-ezgo-700 font-medium">{center.email}</a>
+                </div>
+              )}
             </div>
           </div>
         ))}
@@ -235,6 +278,8 @@ const southCenters = serviceCenters.filter(c => c.region === 'south');
       "@type": "LocalBusiness",
       "name": center.name,
       "telephone": center.phone,
+      ...(center.email && { "email": center.email }),
+      "openingHours": center.hours,
       "address": {
         "@type": "PostalAddress",
         "streetAddress": center.address,

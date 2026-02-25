@@ -25,6 +25,14 @@ const { title, description, ogImage, canonicalUrl, noindex } = Astro.props;
       canonicalUrl={canonicalUrl}
       noindex={noindex}
     />
+    <!-- Google Analytics 4 -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-1MWWGSNREK"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1MWWGSNREK');
+    </script>
     <slot name="head" />
   </head>
   <body class="min-h-screen flex flex-col bg-white text-dark font-heebo antialiased">

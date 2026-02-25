@@ -7,7 +7,13 @@ export default defineConfig({
   site: 'https://ez-go.co.il',
   integrations: [
     tailwind(),
-    sitemap(),
+    sitemap({
+      filter: (page) =>
+        !page.includes('/thank-you') &&
+        !page.includes('/accessibility') &&
+        !page.includes('/privacy') &&
+        !page.includes('/terms'),
+    }),
   ],
   image: {
     service: { entrypoint: 'astro/assets/services/sharp' },

@@ -13,7 +13,7 @@ const siteUrl = 'https://ez-go.co.il';
 const { title, description, ogImage, canonicalUrl, noindex = false } = Astro.props;
 const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
 const canonical = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
-const ogImg = ogImage || `${siteUrl}/images/social.jpg`;
+const ogImg = ogImage || `${siteUrl}/logo.webp`;
 ---
 
 <meta charset="UTF-8" />
