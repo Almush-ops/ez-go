@@ -147,4 +147,4 @@ faq:
 
 תחזוקה נכונה = רכב אמין לאורך שנים.
 
-**צריכים טיפול מקצועי?** [מצאו מרכז שירות](/service/service-centers/) באזורכם, או חפשו מוסך לרכבים תפעוליים ב[Motor Fix](https://motorfix.co.il/utility-vehicle-repair/).
+**צריכים טיפול מקצועי?** [מצאו מרכז שירות](/service/service-centers/) באזורכם.
